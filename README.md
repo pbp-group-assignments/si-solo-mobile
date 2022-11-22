@@ -7,3 +7,7 @@
 - Mathilda Dellanova (NPM: 2106751240)
 - Rifqi Farel Muhammad (NPM: 2106650310)
 - Sakinah Richas (NPM: 2106751511)
+
+## Deskripsi Aplikasi
+
+## Fitur-fitur yang akan diimplementasikan
