@@ -21,3 +21,6 @@ Aplikasi yang kami ajukan adalah Solo smart city, bernama 'Si Solo' atau kepende
 7. Informasi tentang tempat wisata: Halaman yang berisi tentang informasi tempat wisata yang ada di Kota Solo.
 8. Informasi tentang penjualan kebutuhan pokok: Halaman yang berisi tentang penjualan kebutuhan pokok yang ada di Kota Solo.
 9. Pendaftaran izin usaha: Halaman yang berisi form beserta status pendaftaran izin usaha, dimana ketika pendaftaran telah selesai maka pelaku usaha dapat memanage langsung usahanya pada website Si Solo.
+
+## Alur pengintegrasian web service
+Aplikasi Flutter akan mengambil data JSON dengan melakukan method HTTP get. Oleh karena itu, aplikasi perlu ditambahkan dependensi http. Selanjutnya, pada aplikasi ditambahkan fungsi HTTP request dengan method get secara asinkronus untuk mengambil data dari web service. Pada fungsi ini, dibutuhkan method jsonDecode() untuk mengubah HTTP response ke dalam bentuk JSON.
