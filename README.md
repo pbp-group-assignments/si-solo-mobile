@@ -8,6 +8,9 @@
 - Rifqi Farel Muhammad (NPM: 2106650310)
 - Sakinah Richas (NPM: 2106751511)
 
+## Deskripsi aplikasi
+Aplikasi yang kami ajukan adalah Solo smart city, bernama 'Si Solo' atau kependekan dari Sistem Informasi Solo. Smart city atau kota cerdas merupakan wilayah kota yang telah mengintegrasikan teknologi informasi dan komunikasi dalam tata kelola sehari-hari. Alasan kami memilih kota Solo adalah karena menurut kami kota Solo memiliki banyak potensi namun belum memiliki website untuk menyalurkan potensi-potensi tersebut. Manfaat dari aplikasi ini adalah memperbaiki permasalahan di masyarakat, meningkatkan layanan publik, menciptakan pemerintahan yang lebih baik, mencerdaskan masyarakat, serta mengelola potensi SDM di kota Solo. Menurut kami, aplikasi smart city yang kami buat dapat menyelesaikan beberapa isu yang dibahas dalam G20, seperti ekonomi digital, pariwisata, kesehatan, pembangunan, serta lingkungan.
+
 ## Daftar modul yang akan diimplementasikan
 1. Forum layanan pengaduan & pemberian saran untuk pembangunan kota (dikerjakan oleh Mathilda Dellanova)
 - Forum layanan pengaduan: Forum yang memungkinkan Pengguna untuk mengirimkan laporan mengenai layanan di Kota Solo. Admin juga dapat melihat seluruh laporan yang telah dikirimkan oleh Pengguna.
