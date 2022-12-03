@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:si_solo/main-page/util/fetch_user.dart';
 import 'package:si_solo/main-page/model/user.dart';
-import 'package:si_solo/landing_page_not_admin.dart';
+import 'package:si_solo/landing_page_pengguna.dart';
 import 'package:si_solo/register_addition.dart';
 import 'package:si_solo/landing_page_admin.dart';
+import 'package:si_solo/landing_page_pelaku_usaha.dart';
 
 class LoginFormPage extends StatefulWidget{
   const LoginFormPage({super.key});
@@ -18,7 +19,6 @@ class _LoginFormPage extends State<LoginFormPage>{
   final _clearPassword = TextEditingController();
   String _username = "";
   String _password = "";
-
 
   @override
   Widget build(BuildContext context) {
@@ -121,10 +121,14 @@ class _LoginFormPage extends State<LoginFormPage>{
                                   Navigator.pushReplacement(
                                   context, 
                                   MaterialPageRoute(builder: (context) => const LandingAdminPage()));
-                                }else{
+                                }else if (UserLogin.listUserLogin[0].role == 'Pengguna'){
                                   Navigator.pushReplacement(
                                   context, 
-                                  MaterialPageRoute(builder: (context) => const LandingNotAdminPage()));
+                                  MaterialPageRoute(builder: (context) => const LandingPenggunaPage()));
+                                }else{
+Navigator.pushReplacement(
+                                  context, 
+                                  MaterialPageRoute(builder: (context) => const LandingPelakuUsahaPage()));
                                 }
                               }else if (UserLogin.listUserLogin[0].status == 'notRegister'){
                                 Navigator.pushReplacement(
