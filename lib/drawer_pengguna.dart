@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:si_solo/pendaftaran_izin_usaha/page/daftar_pelaku_usaha.dart';
-import 'package:si_solo/landing_page_not_admin.dart';
+import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pengguna.dart';
+import 'package:si_solo/landing_page_pengguna.dart';
 
 Drawer buildDrawer(BuildContext context) {
   return Drawer(
@@ -11,16 +11,16 @@ Drawer buildDrawer(BuildContext context) {
           onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const LandingNotAdminPage())
+              MaterialPageRoute(builder: (context) => const LandingPenggunaPage())
             );
           }
         ),
         ListTile(
-          title: const Text('Daftar Pelaku Usaha'),
+          title: const Text('Pendaftaran Usaha'),
           onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const DaftarPelakuUsahaPage())
+              MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPenggunaPage())
             );
           }
         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:si_solo/drawer_non_admin.dart';
+import 'package:si_solo/drawer_pengguna.dart';
 
 class RegisterAdditionPage extends StatefulWidget {
   const RegisterAdditionPage({super.key});
