@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:si_solo/drawer_non_admin.dart';
+
+class LandingNotAdminPage extends StatefulWidget {
+  const LandingNotAdminPage({super.key});
+
+  @override
+  State<LandingNotAdminPage> createState() => _LandingNotAdminPage();
+}
+
+class _LandingNotAdminPage extends State<LandingNotAdminPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Halaman Utama'),
+      ),
+      drawer: buildDrawer(context),
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                child: Text('Login', style: TextStyle(fontSize: 15.0, color: Colors.white),),  
+                style: ButtonStyle(
+                  // foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                onPressed: () {},
+              )
+            )
+          ],
+        ),
+      )
+    );
+  }
+}

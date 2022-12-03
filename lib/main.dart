@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:si_solo/drawer_non_admin.dart';
+import 'package:si_solo/main-page/page/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,40 +30,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: buildDrawer(context),
-      body: Center(
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                child: Text('Login', style: TextStyle(fontSize: 15.0, color: Colors.white),),  
+                style: ButtonStyle(
+                  // foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context, 
+                    MaterialPageRoute(builder: (context) => const LoginFormPage()));
+                },
+              )
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      )
     );
   }
 }

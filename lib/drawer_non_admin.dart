@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:si_solo/main.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/daftar_pelaku_usaha.dart';
+import 'package:si_solo/landing_page_not_admin.dart';
 
 Drawer buildDrawer(BuildContext context) {
   return Drawer(
@@ -11,7 +11,7 @@ Drawer buildDrawer(BuildContext context) {
           onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const MyHomePage())
+              MaterialPageRoute(builder: (context) => const LandingNotAdminPage())
             );
           }
         ),
