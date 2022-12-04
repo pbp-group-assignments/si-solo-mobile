@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:si_solo/admin/page/detail_pendaftaran_pelaku_usaha.dart';
+import 'package:si_solo/admin/page/detail_pendaftaran_usaha.dart';
 import 'package:si_solo/drawer_admin.dart';
 import 'package:si_solo/admin/util/fetch_pendaftaran_usaha.dart';
 
@@ -42,7 +42,7 @@ class _ListPendaftaranUsahaPage extends State<ListPendaftaranUsahaPage> {
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: (snapshot.data![index].statusPendaftaran == 'Diajukan')? Colors.black:((snapshot.data![index].statusPendaftaran == 'Diproses')?Colors.yellow:((snapshot.data![index].statusPendaftaran == 'Diterma')?Colors.blue:Colors.red)), width: 2,),
+                      side: BorderSide(color: (snapshot.data![index].statusPendaftaran == 'Diajukan')? Colors.black:((snapshot.data![index].statusPendaftaran == 'Diproses')?Colors.yellow:((snapshot.data![index].statusPendaftaran == 'Diterima')?Colors.blue:Colors.red)), width: 2,),
                     ),
 
                     child: Container(
@@ -58,8 +58,8 @@ class _ListPendaftaranUsahaPage extends State<ListPendaftaranUsahaPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                  DetailPendaftaranPelakuUsaha(
-                                    pelakuUsaha: snapshot.data![index],
+                                  DetailPendaftaranUsaha(
+                                    usaha: snapshot.data![index],
                                   )
                               ),
                             );

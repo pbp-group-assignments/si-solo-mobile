@@ -25,13 +25,16 @@ Future<List<Usaha>> fetchSemuaUsaha() async {
   return listPelakuUsaha;
 }
 
-Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String nik) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-diterima-pelaku-usaha-mobile');
+Future<void> pendaftaranDiproses(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String jenisUsaha, String alamatUsaha, String nomorTeleponUsaha) async {
+  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-diproses-pendaftaran-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;
   data['alamatPemilik'] = alamatPemilik;
-  data['nik'] = nik;
+  data['namaUsaha'] = namaUsaha;
+  data['jenisUsaha'] = jenisUsaha;
+  data['alamatUsaha'] = alamatUsaha;
+  data['nomorTeleponUsaha'] = nomorTeleponUsaha;
   http.Response response = await http.post(
     url,
     headers: {"Content-Type": 'application/json; charset=UTF-8'},
@@ -39,14 +42,35 @@ Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik
   );
 }
 
-Future<void> pendaftaranDitolak(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String nik, String alasan) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-ditolak-pelaku-usaha-mobile');
+Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String jenisUsaha, String alamatUsaha, String nomorTeleponUsaha, String nomorIzinUsaha) async {
+  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-diterima-pendaftaran-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;
   data['alamatPemilik'] = alamatPemilik;
-  data['nik'] = nik;
-  data['alasan'] = alasan;
+  data['namaUsaha'] = namaUsaha;
+  data['jenisUsaha'] = jenisUsaha;
+  data['alamatUsaha'] = alamatUsaha;
+  data['nomorTeleponUsaha'] = nomorTeleponUsaha;
+  data['nomorIzinUsaha'] = nomorIzinUsaha;
+  http.Response response = await http.post(
+    url,
+    headers: {"Content-Type": 'application/json; charset=UTF-8'},
+    body: json.encode(data)
+  );
+}
+
+Future<void> pendaftaranDitolak(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String jenisUsaha, String alamatUsaha, String nomorTeleponUsaha, String alasanDitolak) async {
+  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-ditolak-pendaftaran-mobile');
+  Map data = {};
+  data['namaLengkap'] = namaLengkap;
+  data['nomorTeleponPemilik'] = nomorTeleponPemilik;
+  data['alamatPemilik'] = alamatPemilik;
+  data['namaUsaha'] = namaUsaha;
+  data['jenisUsaha'] = jenisUsaha;
+  data['alamatUsaha'] = alamatUsaha;
+  data['nomorTeleponUsaha'] = nomorTeleponUsaha;
+  data['alasanDitolak'] = alasanDitolak;
   http.Response response = await http.post(
     url,
     headers: {"Content-Type": 'application/json; charset=UTF-8'},
