@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:si_solo/pendaftaran_izin_usaha/model/status_pelaku_usaha.dart';
 
 Future<List<StatusPelakuUsaha>> fetchStatusPelakuyUsaha(String role, String namaLengkap, String nomorTeleponPemilik, String alamatPemilik) async {
-  var url = Uri.parse('http://127.0.0.1:8000/daftar-usaha/daftar-pelaku-usaha-mobile/$role/$namaLengkap/$nomorTeleponPemilik/$alamatPemilik');
+  var url = Uri.parse('https://si-solo.up.railway.app/daftar-usaha/daftar-pelaku-usaha-mobile/$role/$namaLengkap/$nomorTeleponPemilik/$alamatPemilik');
   var response = await http.get(
     url,
     headers: {

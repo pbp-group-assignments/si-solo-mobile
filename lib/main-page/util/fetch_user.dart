@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:si_solo/main-page/model/user.dart';
 
 Future<void> fetchLogin(String username, String password) async{
-    var url = Uri.parse('http://127.0.0.1:8000/login_mobile/');
+    var url = Uri.parse('https://si-solo.up.railway.app/login_mobile/');
     Map data = {};
     data['username'] = username;
     data['password'] = password;

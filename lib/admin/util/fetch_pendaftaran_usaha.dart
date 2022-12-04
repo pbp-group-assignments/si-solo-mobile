@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:si_solo/pendaftaran_izin_usaha/model/usaha.dart';
 
 Future<List<Usaha>> fetchSemuaUsaha() async {
-  var url = Uri.parse('http://127.0.0.1:8000/daftar-usaha/semua-usaha-json');
+  var url = Uri.parse('https://si-solo.up.railway.app/daftar-usaha/semua-usaha-json');
   var response = await http.get(
     url,
     headers: {
@@ -26,7 +26,7 @@ Future<List<Usaha>> fetchSemuaUsaha() async {
 }
 
 Future<void> pendaftaranDiproses(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String jenisUsaha, String alamatUsaha, String nomorTeleponUsaha) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-diproses-pendaftaran-mobile');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/set-diproses-pendaftaran-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;
@@ -43,7 +43,7 @@ Future<void> pendaftaranDiproses(String namaLengkap, String nomorTeleponPemilik,
 }
 
 Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String jenisUsaha, String alamatUsaha, String nomorTeleponUsaha, String nomorIzinUsaha) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-diterima-pendaftaran-mobile');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/set-diterima-pendaftaran-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;
@@ -61,7 +61,7 @@ Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik
 }
 
 Future<void> pendaftaranDitolak(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String jenisUsaha, String alamatUsaha, String nomorTeleponUsaha, String alasanDitolak) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-ditolak-pendaftaran-mobile');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/set-ditolak-pendaftaran-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;

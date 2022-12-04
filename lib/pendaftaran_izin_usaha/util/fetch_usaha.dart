@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:si_solo/pendaftaran_izin_usaha/model/usaha.dart';
 
 Future<List<Usaha>> fetchUsaha(String role, String namaLengkap, String nomorTeleponPemilik, String alamatPemilik) async {
-  var url = Uri.parse('http://127.0.0.1:8000/daftar-usaha/usaha-json-mobile/$role/$namaLengkap/$nomorTeleponPemilik/$alamatPemilik');
+  var url = Uri.parse('https://si-solo.up.railway.app/daftar-usaha/usaha-json-mobile/$role/$namaLengkap/$nomorTeleponPemilik/$alamatPemilik');
   var response = await http.get(
     url,
     headers: {
@@ -26,7 +26,7 @@ Future<List<Usaha>> fetchUsaha(String role, String namaLengkap, String nomorTele
 
 Future<void> addUsaha(String role, String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String namaUsaha, String? jenisUsaha, String alamatUsaha, int? nomorTeleponUsaha) async{
   String nomorTeleponUsahaString = nomorTeleponUsaha.toString();
-  var url = Uri.parse('http://127.0.0.1:8000/daftar-usaha/add-usaha-mobile/');
+  var url = Uri.parse('https://si-solo.up.railway.app/daftar-usaha/add-usaha-mobile/');
   Map data = {};
   data['role'] = role;
   data['namaLengkap'] = namaLengkap;
