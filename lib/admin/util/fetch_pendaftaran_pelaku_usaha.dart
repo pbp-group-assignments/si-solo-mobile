@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:si_solo/pendaftaran_izin_usaha/model/pelaku_usaha.dart';
 
 Future<List<PelakuUsaha>> fetchPelakuUsaha() async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/pendaftaran-pelaku-usaha-json');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/pendaftaran-pelaku-usaha-json');
   var response = await http.get(
     url,
     headers: {
@@ -25,7 +25,7 @@ Future<List<PelakuUsaha>> fetchPelakuUsaha() async {
 }
 
 Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String nik) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-diterima-pelaku-usaha-mobile');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/set-diterima-pelaku-usaha-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;
@@ -39,7 +39,7 @@ Future<void> pendaftaranDisetujui(String namaLengkap, String nomorTeleponPemilik
 }
 
 Future<void> pendaftaranDitolak(String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, String nik, String alasan) async {
-  var url = Uri.parse('http://127.0.0.1:8000/Admin/set-ditolak-pelaku-usaha-mobile');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/set-ditolak-pelaku-usaha-mobile');
   Map data = {};
   data['namaLengkap'] = namaLengkap;
   data['nomorTeleponPemilik'] = nomorTeleponPemilik;
