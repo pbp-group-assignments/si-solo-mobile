@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:si_solo/drawer_pelaku_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/model/usaha.dart';
-import 'package:si_solo/pendaftaran_izin_usaha/util/fetch_status_pelaku_usaha.dart';
-import 'package:si_solo/main-page/model/user.dart';
-import 'package:si_solo/pendaftaran_izin_usaha/util/fetch_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pelaku_usaha.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:getwidget/getwidget.dart';
 
 class DetailPendaftaranUsaha extends StatelessWidget{
   final Usaha usaha;
@@ -23,7 +22,12 @@ class DetailPendaftaranUsaha extends StatelessWidget{
           Center(
             child: Text(
               usaha.namaUsaha,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              style: GoogleFonts.lato(
+                  // textStyle: Theme.of(context).textTheme.headline3,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
             )
           ),
           const SizedBox(height: 10,),
@@ -32,51 +36,86 @@ class DetailPendaftaranUsaha extends StatelessWidget{
             children: (usaha.statusPendaftaran == 'Diajukan' || usaha.statusPendaftaran == 'Diproses')?
             [
               const SizedBox(height: 10,),
+
               Row(
-                children: [
-                  const Text(
-                    "Nama Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.namaPemilik,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Nama Pemilik Usaha: ${usaha.namaPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
 
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Nomor Telepon Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorTeleponPemilik,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Nomor Telepon Pemilik Usaha: ${usaha.nomorTeleponPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
 
               const SizedBox(height: 10,),
 
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Alamat Pemilik Usaha: ${usaha.alamatPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Jenis Usaha: ${usaha.jenisUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               
+              const SizedBox(height: 10,),
+
               Row(
                   children: [
                     Flexible(
                       child: Text(
-                        usaha.alamatPemilik,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Alamat Usaha: ${usaha.alamatUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -84,119 +123,53 @@ class DetailPendaftaranUsaha extends StatelessWidget{
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Jenis Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.jenisUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Nomor Telepon Usaha: ${usaha.nomorTeleponUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
+              
+              
+              const SizedBox(height: 10,),
 
               Row(
                   children: [
                     Flexible(
                       child: Text(
-                        usaha.alamatUsaha,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Status Pendaftaran: ${usaha.statusPendaftaran}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
-
-              const SizedBox(height: 10,),
-
-              Row(
-                children: [
-                  const Text(
-                    "Nomor Telepon Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorTeleponUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              Row(
-                children: [
-                  const Text(
-                    "Status Pendaftaran: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.statusPendaftaran,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
             ]:[
               Column(
                 children: (usaha.statusPendaftaran == 'Diterima')?
                 [
                   const SizedBox(height: 10,),
               Row(
-                children: [
-                  const Text(
-                    "Nama Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.namaPemilik,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              Row(
-                children: [
-                  const Text(
-                    "Nomor Telepon Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorTeleponPemilik,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              
-              Row(
                   children: [
                     Flexible(
                       child: Text(
-                        usaha.alamatPemilik,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Nama Pemilik Usaha: ${usaha.namaPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -204,35 +177,16 @@ class DetailPendaftaranUsaha extends StatelessWidget{
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Jenis Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.jenisUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-
-              Row(
                   children: [
                     Flexible(
                       child: Text(
-                        usaha.alamatUsaha,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Nomor Telepon Pemilik Usaha: ${usaha.nomorTeleponPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -240,94 +194,117 @@ class DetailPendaftaranUsaha extends StatelessWidget{
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Nomor Telepon Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorTeleponUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Alamat Pemilik Usaha: ${usaha.alamatPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
 
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Status Pendaftaran: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.statusPendaftaran,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Jenis Usaha: ${usaha.jenisUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
 
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Nomor Izin Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorIzinUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Alamat Usaha: ${usaha.alamatUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Nomor Telepon Usaha: ${usaha.nomorTeleponUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Status Pendaftaran: ${usaha.statusPendaftaran}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Nomor Izin Usaha: ${usaha.nomorIzinUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
                 ]:[
                   const SizedBox(height: 10,),
               Row(
-                children: [
-                  const Text(
-                    "Nama Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.namaPemilik,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              Row(
-                children: [
-                  const Text(
-                    "Nomor Telepon Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorTeleponPemilik,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Pemilik Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              
-              Row(
                   children: [
                     Flexible(
                       child: Text(
-                        usaha.alamatPemilik,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Nama Pemilik Usaha: ${usaha.namaPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -335,35 +312,16 @@ class DetailPendaftaranUsaha extends StatelessWidget{
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Jenis Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.jenisUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 10,),
-
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-
-              Row(
                   children: [
                     Flexible(
                       child: Text(
-                        usaha.alamatUsaha,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Nomor Telepon Pemilik Usaha: ${usaha.nomorTeleponPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -371,47 +329,104 @@ class DetailPendaftaranUsaha extends StatelessWidget{
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Nomor Telepon Usaha: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.nomorTeleponUsaha,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Alamat Pemilik Usaha: ${usaha.alamatPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
 
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Status Pendaftaran: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.statusPendaftaran,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Jenis Usaha: ${usaha.jenisUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
 
               const SizedBox(height: 10,),
 
               Row(
-                children: [
-                  const Text(
-                    "Alasan Pendaftaran Ditolak: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    usaha.alasanDitolak,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Alamat Usaha: ${usaha.alamatUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Nomor Telepon Usaha: ${usaha.nomorTeleponUsaha}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Status Pendaftaran: ${usaha.statusPendaftaran}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              const SizedBox(height: 10,),
+
+              Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Alasan Pendaftaran Ditolak: ${usaha.alasanDitolak}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
                 ],
               )
             ]
@@ -419,22 +434,32 @@ class DetailPendaftaranUsaha extends StatelessWidget{
           ),
 
           const Spacer(),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size.fromHeight(50),
-              ),
-              onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage()));
-              },
+          GFButton(
+            text: "Back",
+            color: Colors.purpleAccent,
+            shape: GFButtonShape.pills,
+            fullWidthButton: true,
+            size: GFSize.LARGE,
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,)));
+            },
+          )
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: ElevatedButton(
+          //     style: ElevatedButton.styleFrom(
+          //       minimumSize: const Size.fromHeight(50),
+          //     ),
+          //     onPressed: () {
+          //       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,)));
+          //     },
 
-              child: const Text(
-                "Back",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
+          //     child: const Text(
+          //       "Back",
+          //       style: TextStyle(color: Colors.white),
+          //     ),
+          //   ),
+          // ),
         ]),
       ),
     );

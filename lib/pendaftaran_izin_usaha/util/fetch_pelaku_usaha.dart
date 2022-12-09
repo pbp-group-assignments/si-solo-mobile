@@ -1,6 +1,5 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:si_solo/pendaftaran_izin_usaha/model/pelaku_usaha.dart';
 
 Future<void> daftarPelakuUsaha(String role, String namaLengkap, String nomorTeleponPemilik, String alamatPemilik, int? nik) async {
   String nikString = nik.toString();

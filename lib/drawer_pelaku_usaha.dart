@@ -22,7 +22,7 @@ Drawer buildDrawer(BuildContext context) {
           onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage())
+              MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,))
             );
           }
         ),

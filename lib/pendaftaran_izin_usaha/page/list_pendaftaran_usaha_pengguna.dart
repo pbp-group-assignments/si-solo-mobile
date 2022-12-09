@@ -3,9 +3,10 @@ import 'package:si_solo/drawer_pengguna.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/util/fetch_pelaku_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/util/fetch_status_pelaku_usaha.dart';
 import 'package:si_solo/main-page/model/user.dart';
-import 'package:si_solo/pendaftaran_izin_usaha/util/fetch_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/daftar_pelaku_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pelaku_usaha.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:getwidget/getwidget.dart';
 
 class ListPendaftaranUsahaPenggunaPage extends StatefulWidget{
   const ListPendaftaranUsahaPenggunaPage({super.key});
@@ -32,33 +33,37 @@ class _ListPendaftaranUsahaPenggunaPage extends State<ListPendaftaranUsahaPenggu
               return Center(
                 child: Column(
                   children: [
+                    const SizedBox(height: 15,),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Text(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(
                         "Anda belum terdaftar sebagai Pelaku Usaha, segera daftarkan diri Anda dengan menekan tombol 'Daftar' dibawah",
-                        style: TextStyle(fontSize: 25),
+                        style: GoogleFonts.lato(
+                          textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
 
                     const SizedBox(height: 10,),
 
-                    OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        shape: StadiumBorder(),
-                        side: BorderSide(
-                          width: 2,
-                          color: Colors.red
-                        ),
-                      ),
+                    GFButton(
                       onPressed: () {
                         Navigator.pushReplacement(
                           context, 
                           MaterialPageRoute(builder: (context) => const DaftarPelakuUsahaPage())
                         );
                       },
-                      child: Text('Daftar', style: TextStyle(fontSize: 22, color: Colors.black),),
-                    ),
+                      text: "Daftar",
+                      icon: Icon(Icons.add_circle_outline),
+                      size: GFSize.LARGE,
+                      color: Colors.purpleAccent,
+                      shape: GFButtonShape.pills,
+                      blockButton: true,
+                    )
                   ],
                 ),
               );
@@ -67,14 +72,20 @@ class _ListPendaftaranUsahaPenggunaPage extends State<ListPendaftaranUsahaPenggu
                 return Center(
                   child: Column(
                     children: [
+                      const SizedBox(height: 15,),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Text(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text(
                           "Pendaftaran Anda Sedang Diproses, Mohon Tunggu",
-                          style: TextStyle(fontSize: 25),
-                          textAlign: TextAlign.center,
+                          style: GoogleFonts.lato(
+                            textStyle: Theme.of(context).textTheme.headline3,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black
                           ),
-                      )
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ],
                   ),
                 );
@@ -86,40 +97,52 @@ class _ListPendaftaranUsahaPenggunaPage extends State<ListPendaftaranUsahaPenggu
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            Text(
+                            Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
                               "Mohon Maaf, Pendaftaran Anda Telah Kami Tolak.",
-                              style: TextStyle(fontSize: 25),
+                              style: GoogleFonts.lato(
+                                textStyle: Theme.of(context).textTheme.headline3,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black
+                              ),
                               textAlign: TextAlign.center,
                             ),
+                          ),
                             
                             const SizedBox(height: 5,),
 
                             Text(
                               "Alasan: ${snapshot.data![0].pesan}",
-                              style: TextStyle(fontSize: 25),
+                              style: GoogleFonts.lato(
+                                textStyle: Theme.of(context).textTheme.headline3,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black
+                              ),
                               textAlign: TextAlign.center,
                             ),
 
                             const SizedBox(height: 15,),
 
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: TextButton(
-                                child: const Text("Daftar Lagi", style: TextStyle(color: Colors.white, fontSize: 15),),
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                                ),
-                                onPressed: (){
-                                  daftarUlang(UserLogin.listUserLogin[0].role, UserLogin.listUserLogin[0].namaLengkap, UserLogin.listUserLogin[0].nomorTeleponPemilik, UserLogin.listUserLogin[0].alamatPemilik);
+                            GFButton(
+                              text: "Daftar Lagi",
+                              icon: Icon(Icons.remove_circle_outline),
+                              size: GFSize.LARGE,
+                              color: Colors.purpleAccent,
+                              shape: GFButtonShape.pills,
+                              blockButton: true,
+                              onPressed: () {
+                                daftarUlang(UserLogin.listUserLogin[0].role, UserLogin.listUserLogin[0].namaLengkap, UserLogin.listUserLogin[0].nomorTeleponPemilik, UserLogin.listUserLogin[0].alamatPemilik);
 
-                                  Future.delayed(Duration(milliseconds: 1500)).then((_){
-                                    Navigator.pushReplacement(
-                                      context, 
-                                      MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPenggunaPage())
-                                    );
-                                  });
-                                },
-                              ),
+                                Future.delayed(Duration(milliseconds: 1500)).then((_){
+                                  Navigator.pushReplacement(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => const DaftarPelakuUsahaPage())
+                                  );
+                                });
+                              },
                             ),
                           ],
                         )
@@ -135,36 +158,48 @@ class _ListPendaftaranUsahaPenggunaPage extends State<ListPendaftaranUsahaPenggu
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            Text(
-                              "Selamat, pendaftaran Anda telah kami terima!",
-                              style: TextStyle(fontSize: 25),
-                              textAlign: TextAlign.center,
+                            const SizedBox(height: 15,),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Text(
+                                "Selamat, pendaftaran Anda telah kami terima!",
+                                style: GoogleFonts.lato(
+                                  textStyle: Theme.of(context).textTheme.headline3,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                             
-                            const SizedBox(height: 5,),
+                            const SizedBox(height: 10,),
 
                             Text(
                               "Silahkan tekan tombol 'Lanjutkan' untuk mulai mendaftarkan usaha Anda",
-                              style: TextStyle(fontSize: 25),
-                              textAlign: TextAlign.center,
+                              style: GoogleFonts.lato(
+                                  textStyle: Theme.of(context).textTheme.headline3,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black
+                                ),
+                                textAlign: TextAlign.center,
                             ),
 
                             const SizedBox(height: 15,),
 
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: TextButton(
-                                child: const Text("Lanjutkan", style: TextStyle(color: Colors.white, fontSize: 15),),
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                                ),
-                                onPressed: (){
-                                  Navigator.pushReplacement(
-                                    context, 
-                                    MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage())
-                                  );
-                                },
-                              ),
+                            GFButton(
+                              text: "Lanjutkan",
+                              size: GFSize.LARGE,
+                              color: Colors.purpleAccent,
+                              shape: GFButtonShape.pills,
+                              blockButton: true,
+                              onPressed: (){
+                                Navigator.pushReplacement(
+                                  context, 
+                                  MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,))
+                                );
+                              },
                             ),
                           ],
                         )

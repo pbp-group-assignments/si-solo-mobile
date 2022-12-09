@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:si_solo/drawer_pelaku_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/util/fetch_usaha.dart';
 import 'package:si_solo/main-page/model/user.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 class DaftarUsahaBaruPage extends StatefulWidget{
   const DaftarUsahaBaruPage({super.key});
@@ -16,16 +18,59 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
   final _clearAlamatUsaha = TextEditingController();
   final _clearNomorTeleponusaha = TextEditingController();
   String _namaUsaha = "";
-  List<String> listJenisUsaha = ['Kuliner', 'Tempat Wisata', 'Menjual Bahan Pokok'];
+  final List<String> listJenisUsaha = ['Kuliner', 'Tempat Wisata', 'Menjual Bahan Pokok'];
   String _alamatUsaha = "";
   int? _nomorTeleponUsaha = 0;
   String? _jenis;
+
+  List<DropdownMenuItem<String>> _addDividersAfterItems(List<String> items) {
+    List<DropdownMenuItem<String>> _menuItems = [];
+    for (var item in items) {
+      _menuItems.addAll(
+        [
+          DropdownMenuItem<String>(
+            value: item,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                item,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          ),
+          //If it's last item, we will not add Divider after it.
+          if (item != items.last)
+            const DropdownMenuItem<String>(
+              enabled: false,
+              child: Divider(),
+            ),
+        ],
+      );
+    }
+    return _menuItems;
+  }
+
+  List<double> _getCustomItemsHeights() {
+    List<double> _itemsHeights = [];
+    for (var i = 0; i < (listJenisUsaha.length * 2) - 1; i++) {
+      if (i.isEven) {
+        _itemsHeights.add(40);
+      }
+      //Dividers indexes will be the odd indexes
+      if (i.isOdd) {
+        _itemsHeights.add(4);
+      }
+    }
+    return _itemsHeights;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Halaman Utama'),
+        title: Text('Daftar Usaha'),
       ),
       drawer: buildDrawer(context),
       body: Form(
@@ -45,6 +90,15 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
                         labelText: "Nama Usaha",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)
                         ),
                       ),
 
@@ -73,33 +127,32 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
                     const SizedBox(height: 10,),
 
                     SizedBox(
-                width: 200,
-                child: DropdownButtonFormField(
-                  hint: const Text('Pilih Jenis Usaha'),
-                  value: _jenis,
-                  validator: (value) => 
-                    value == null? "Pilih Jenis Usaha":null,
-                  items: const <DropdownMenuItem<String>>[
-                    DropdownMenuItem<String>(
-                      value: 'Kuliner',
-                      child: Text('Kuliner'),
+                      width: 180,
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton2(
+                          isExpanded: true,
+                          hint: Text(
+                            'Pilih Jenis Usaha',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Theme.of(context).hintColor,
+                            ),
+                          ),
+                          items: _addDividersAfterItems(listJenisUsaha),
+                          customItemsHeights: _getCustomItemsHeights(),
+                          value: _jenis,
+                          onChanged: (value) {
+                            setState(() {
+                              _jenis = value as String;
+                            });
+                          },
+                          buttonHeight: 40,
+                          dropdownMaxHeight: 200,
+                          buttonWidth: 170,
+                          itemPadding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        ),
+                      ),
                     ),
-                    DropdownMenuItem<String>(
-                      value: 'Tempat Wisata',
-                      child: Text('Tempat Wisata'),
-                    ),
-                    DropdownMenuItem<String>(
-                      value: 'Menjual Bahan Pokok',
-                      child: Text('Menjual Bahan Pokok'),
-                    ),
-                  ],
-                  onChanged: (String? value){
-                    setState(() {
-                      _jenis = value!;
-                    });
-                  },
-                ),
-              ),
 
                     const SizedBox(height: 10,),
 
@@ -109,6 +162,15 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
                         labelText: "Alamat Usaha",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)
                         ),
                       ),
 
@@ -144,7 +206,16 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
                             // icon: const Icon(Icons.monetization_on),
                             // Menambahkan circular border agar lebih rapi
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(5.0),
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: BorderSide(color: Colors.black)
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: BorderSide(color: Colors.black)
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: BorderSide(color: Colors.black)
                             ),
                         ),
 
@@ -176,15 +247,9 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
               ),
               const Spacer(),
 
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: TextButton(
-                  child: const Text("Simpan", style: TextStyle(color: Colors.white),),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  ),
-                  onPressed: (){
-                    if (_formKey.currentState!.validate()){
+              GFButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate() && _jenis != null){
                       addUsaha(UserLogin.listUserLogin[0].role, UserLogin.listUserLogin[0].namaLengkap, UserLogin.listUserLogin[0].nomorTeleponPemilik, UserLogin.listUserLogin[0].alamatPemilik, _namaUsaha, _jenis, _alamatUsaha, _nomorTeleponUsaha);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -221,8 +286,13 @@ class _DaftarUsahaBaruPage extends State<DaftarUsahaBaruPage>{
                         )
                       );
                     }
-                  },
-                ),
+                },
+                text: "Simpan",
+                color: Colors.purpleAccent,
+                shape: GFButtonShape.pills,
+                blockButton: false,
+                size: GFSize.LARGE,
+                fullWidthButton: true,
               ),
             ]
           )
