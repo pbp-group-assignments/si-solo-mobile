@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:si_solo/admin/util/fetch_pendaftaran_pelaku_usaha.dart';
 import 'package:si_solo/drawer_admin.dart';
-import 'package:si_solo/main-page/model/user.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/model/pelaku_usaha.dart';
 import 'package:si_solo/admin/page/list_pendaftaran_pelaku_usaha.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:getwidget/getwidget.dart';
+import 'package:si_solo/admin/page/form_tolak_pendaftaran_pelaku_usaha.dart';
 
 class DetailPendaftaranPelakuUsaha extends StatelessWidget{
   final PelakuUsaha pelakuUsaha;
@@ -21,11 +23,15 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
         child: Column(
           children: [
             Center(
-              child: Text(
-                pelakuUsaha.namaPemilik,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              )
-            ),
+            child: Text(
+              pelakuUsaha.namaPemilik,
+              style: GoogleFonts.lato(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              textAlign: TextAlign.center,
+            )
+          ),
 
             const SizedBox(height: 20,),
             
@@ -34,34 +40,15 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
               [
                 Row(
                   children: [
-                    const Text(
-                      "Nomor Telepon Pendaftar: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.nomorTeleponPemilik,
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 10,),
-
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Pendaftar: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-
-                  Row(
-                  children: [
                     Flexible(
                       child: Text(
-                        pelakuUsaha.alamatPemilik,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Nomor Telepon Pendaftar: ${pelakuUsaha.nomorTeleponPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -70,14 +57,16 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
 
                 Row(
                   children: [
-                    const Text(
-                      "NIK Pendaftar: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.nik,
-                      style: const TextStyle(fontSize: 18),
-                    ),
+                    Flexible(
+                      child: Text(
+                        "Alamat Pendaftar: ${pelakuUsaha.alamatPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
                   ],
                 ),
 
@@ -85,14 +74,34 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
 
                 Row(
                   children: [
-                    const Text(
-                      "Status Pendaftaran: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.status,
-                      style: const TextStyle(fontSize: 18),
-                    ),
+                    Flexible(
+                      child: Text(
+                        "NIK Pendaftar: ${pelakuUsaha.nik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+                const SizedBox(height: 10,),
+
+                
+                Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Status Pendaftaran: ${pelakuUsaha.status}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
                   ],
                 ),
 
@@ -100,48 +109,31 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
 
                 Row(
                   children: [
-                    const Text(
-                      "Alasan Ditolak: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.pesan,
-                      style: const TextStyle(fontSize: 18),
-                    ),
+                    Flexible(
+                      child: Text(
+                        "Alasan Ditolak: ${pelakuUsaha.pesan}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ]:
               [
                 Row(
                   children: [
-                    const Text(
-                      "Nomor Telepon Pendaftar: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.nomorTeleponPemilik,
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 10,),
-
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Alamat Pendaftar: ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-
-                  Row(
-                  children: [
                     Flexible(
                       child: Text(
-                        pelakuUsaha.alamatPemilik,
-                        style: const TextStyle(fontSize: 18),
-                      )
+                        "Nomor Telepon Pendaftar: ${pelakuUsaha.nomorTeleponPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -150,14 +142,16 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
 
                 Row(
                   children: [
-                    const Text(
-                      "NIK Pendaftar: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.nik,
-                      style: const TextStyle(fontSize: 18),
-                    ),
+                    Flexible(
+                      child: Text(
+                        "Alamat Pendaftar: ${pelakuUsaha.alamatPemilik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
                   ],
                 ),
 
@@ -165,14 +159,33 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
 
                 Row(
                   children: [
-                    const Text(
-                      "Status Pendaftaran: ",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text(
-                      pelakuUsaha.status,
-                      style: const TextStyle(fontSize: 18),
-                    ),
+                    Flexible(
+                      child: Text(
+                        "NIK Pendaftar: ${pelakuUsaha.nik}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+                const SizedBox(height: 10,),
+
+                Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Status Pendaftaran: ${pelakuUsaha.status}",
+                        style: GoogleFonts.lato(
+                          // textStyle: Theme.of(context).textTheme.headline3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ]
@@ -186,120 +199,29 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextButton(
-                      child: const Text("Setujui", style: TextStyle(color: Colors.white),),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.green),
-                      ),
-                      onPressed: (){
+                    GFButton(
+                      text: "Setujui",
+                      color: Colors.green,
+                      shape: GFButtonShape.pills,
+                      size: GFSize.LARGE,
+                      onPressed: () {
                         pendaftaranDisetujui(pelakuUsaha.namaPemilik, pelakuUsaha.nomorTeleponPemilik, pelakuUsaha.alamatPemilik, pelakuUsaha.nik);
                         Future.delayed(Duration(milliseconds: 1000)).then((_){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage()));
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage(index: 0,)));
                         });
                       },
                     ),
+
                     const SizedBox(width: 10,),
-                    TextButton(
-                      child: const Text("Tolak", style: TextStyle(color: Colors.white),),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.red),
-                      ),
-                      onPressed: () => showModalBottomSheet(
-                        backgroundColor: Colors.cyan,
-                        barrierColor: Colors.transparent,
-                        context: context,
-                        builder: (_){
-                          String _alasanDitolak = "";
-                          final _clearAlasan = TextEditingController();
-                          return Container(
-                            height: 350,
-                            decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(20),
-                                topLeft: Radius.circular(20)
-                              )
-                            ),
-                            child: Form(
-                              key: GlobalKey<FormState>(),
-                              child: Container(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          TextFormField(
-                                            decoration: InputDecoration(
-                                              hintText: "Contoh: NIK Tidak Sesuai",
-                                              labelText: "Alasan Ditolak",
-                                              border: OutlineInputBorder(
-                                                borderRadius: BorderRadius.circular(5.0),
-                                              ),
-                                            ),
 
-                                            controller: _clearAlasan,
-
-                                            onChanged: (String? value){
-                                              _alasanDitolak = value!;
-                                            },
-
-                                            onSaved: (String? value){
-                                              _alasanDitolak = value!;
-                                            },
-
-                                            validator: (String? value){
-                                              if (value == null || value.isEmpty) {
-                                                return 'Alasan pendaftaran ditolak tidak boleh kosong!';
-                                              }
-                                              return "ok";
-                                            },
-                                          ),
-                                          
-                                          const SizedBox(height: 15),
-
-                                          Align(
-                                            alignment: Alignment.bottomCenter,
-                                            child: TextButton(
-                                              child: const Text("Submit", style: TextStyle(color: Colors.white, fontSize: 15),),
-                                              style: ButtonStyle(
-                                                backgroundColor: MaterialStateProperty.all(Colors.blue),
-                                              ),
-                                              onPressed: (){
-                                                if (_alasanDitolak != ""){
-                                                  pendaftaranDitolak(pelakuUsaha.namaPemilik, pelakuUsaha.nomorTeleponPemilik, pelakuUsaha.alamatPemilik, pelakuUsaha.nik, _alasanDitolak);
-                                                  Future.delayed(Duration(milliseconds: 1000)).then((_){
-                                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage()));
-                                                  });
-                                                }else{
-                                                  ScaffoldMessenger.of(context).showSnackBar(
-                                                    SnackBar(
-                                                      backgroundColor: Colors.red,
-                                                      content: Text("Alasan pendaftaran ditolak tidak boleh kosong!"),
-                                                      action: SnackBarAction(
-                                                        label: 'Close',
-                                                        textColor: Colors.white,
-                                                        onPressed: (){
-                                                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                                        },
-                                                      ),
-                                                    )
-                                                  );
-                                                }
-                                              },
-                                            ),
-                                          ),
-                                        ]
-                                      )
-                                    )
-                                  ]
-                                )
-                              )
-                            ),
-                          );
-                        }
-                      )
+                    GFButton(
+                      text: "Tolak",
+                      color: Colors.red,
+                      shape: GFButtonShape.pills,
+                      size: GFSize.LARGE,
+                      onPressed: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => FormTolakPendaftaranPelakuUsahaPage(pelakuUsaha: pelakuUsaha,)));
+                      }
                     ),
                   ]
                 ),
@@ -307,22 +229,17 @@ class DetailPendaftaranPelakuUsaha extends StatelessWidget{
             ),
 
             const Spacer(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage()));
-                },
 
-                child: const Text(
-                  "Back",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
+            GFButton(
+            text: "Back",
+            color: Colors.purpleAccent,
+            shape: GFButtonShape.pills,
+            fullWidthButton: true,
+            size: GFSize.LARGE,
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage(index: 0,)));
+            },
+          )
           ],
         )
       )
