@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:si_solo/drawer_admin.dart';
 import 'package:si_solo/admin/page/list_pendaftaran_pelaku_usaha.dart';
 import 'package:si_solo/admin/page/list_pendaftaran_usaha.dart';
+import 'package:getwidget/components/avatar/gf_avatar.dart';
+import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 
 class LandingAdminPage extends StatefulWidget {
   const LandingAdminPage({super.key});
@@ -28,45 +30,53 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
                     ),
 
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: Text(
-                              "Pendaftaran Pelaku Usaha",
-                              style: TextStyle(fontSize: 25),
-                              textAlign: TextAlign.center,
-                            ),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/business_icon.png'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Pendaftaran Pelaku Usaha',
+                        subTitleText: 'List pengguna yang mendaftar sebagai pelaku usaha',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage())
+                          );
+                        },
+                      ),
+                    ),
+                  ),
 
-                            onTap: () {
-                              Navigator.pushReplacement(
-                                context, 
-                                MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage())
-                              );
-                            },
-                          ),
-                          const SizedBox(height: 10,),
-                          ListTile(
-                            title: Text(
-                              "Pendaftaran Usaha",
-                              style: TextStyle(fontSize: 25),
-                              textAlign: TextAlign.center,
-                            ),
+                  const SizedBox(height: 10,),
 
-                            onTap: () {
-                              Navigator.pushReplacement(
-                                context, 
-                                MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPage())
-                              );
-                            },
-                          ),
-                        ],
-                      )
-                      
-                    )
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                    ),
+
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/umkm_icon.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Pendaftaran Usaha',
+                        subTitleText: 'List usaha yang didaftarkan',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPage())
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ],
               )
