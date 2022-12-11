@@ -37,6 +37,22 @@ Drawer buildDrawer(BuildContext context) {
           }
         ),
         ListTile(
+          title: const Text('List Pengaduan'),
+          onTap: () {
+            Navigator.pushReplacement(
+              context, 
+              MaterialPageRoute(builder: (context) => const ListPengaduanPage(index: 0,))
+            );
+          }
+        ),
+        ListTile(
+          title: const Text('List Kritik Saran'),
+          onTap: () {
+            Navigator.pushReplacement(
+              context, 
+              MaterialPageRoute(builder: (context) => const ListKritikSaranPage(index: 0,))
+            );
+          }
             title: const Text('Info Wisata'),
             onTap: () {
               Navigator.pushReplacement(
