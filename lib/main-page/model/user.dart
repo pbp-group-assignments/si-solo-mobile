@@ -1,10 +1,12 @@
 import 'dart:convert';
 
-List<User> userFromJson(String str) => List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
+List<User> userFromJson(String str) =>
+    List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
 
-String userToJson(List<User> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String userToJson(List<User> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class User{
+class User {
   String status = "";
   String username = "";
   String role = "";
@@ -22,24 +24,30 @@ class User{
   });
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    status: json["status"],
-    username: json["fields"]["username"], 
-    role: json["fields"]["role"], 
-    namaLengkap: json["fields"]["namaLengkap"], 
-    nomorTeleponPemilik: json["fields"]["nomorTeleponPemilik"],
-    alamatPemilik: json["fields"]["alamatPemilik"]
-  );
+      status: json["status"],
+      username: json["fields"]["username"],
+      role: json["fields"]["role"],
+      namaLengkap: json["fields"]["namaLengkap"],
+      nomorTeleponPemilik: json["fields"]["nomorTeleponPemilik"],
+      alamatPemilik: json["fields"]["alamatPemilik"]);
 
-  Map<String, dynamic> toJson() =>{
-    "status": status,
-    "username": username,
-    "role": role,
-    "namaLengkap": namaLengkap,
-    "nomorTeleponPemilik": nomorTeleponPemilik,
-    "alamatPemilik": alamatPemilik,
-  };
+  Map<String, dynamic> toJson() => {
+        "status": status,
+        "username": username,
+        "role": role,
+        "namaLengkap": namaLengkap,
+        "nomorTeleponPemilik": nomorTeleponPemilik,
+        "alamatPemilik": alamatPemilik,
+      };
 }
 
-class UserLogin{
+class UserLogin {
   static List<User> listUserLogin = [];
+  static User loggedInUser = User(
+      status: "",
+      username: "",
+      role: "",
+      namaLengkap: "",
+      nomorTeleponPemilik: "",
+      alamatPemilik: "");
 }
