@@ -7,7 +7,7 @@ String KritikSaranToJson(List<KritikSaran> data) => json.encode(List<dynamic>.fr
 class KritikSaran{
   String nama;
   String email;
-  String kritikSaran
+  String kritikSaran;
 
   KritikSaran({
     required this.nama,

@@ -3,6 +3,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:si_solo/drawer_pengguna.dart';
 import 'package:si_solo/landing_page_pengguna.dart';
 import 'package:si_solo/main-page/model/user.dart';
+import 'package:si_solo/saran_pembangunan_kota/util/fetch_kritik_saran.dart';
 
 class FormSaranPage extends StatefulWidget{
   const FormSaranPage({super.key});
@@ -129,12 +130,12 @@ class _FormSaranPageState extends State<FormSaranPage>{
               ),
               onPressed: (){
                 if(_formKey.currentState!.validate()){
-                  daftarKritikSaran(UserLogin.listUserLogin[0].nama, UserLogin.listUserLogin[0].email, UserLogin.listUserLogin[0].kritikSaran);
+                  daftarKritikSaran(_nama, _email, _kritikSaran);
                   clearText();
                   setState(() {
-                      _nama = null;
-                      _email = null;
-                      _kritikSaran = null;
+                      _nama = "";
+                      _email = "";
+                      _kritikSaran = "";
                   });
                 }
               },

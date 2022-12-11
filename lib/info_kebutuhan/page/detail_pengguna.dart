@@ -4,7 +4,7 @@ import 'package:si_solo/drawer_pengguna.dart';
 import 'package:flutter/material.dart';
 
 class KebutuhanPenggunaDetail  extends StatelessWidget {
-  final KebutuhanPenggunaDetail kebutuhanpengguna;
+  final Kebutuhan kebutuhanpengguna;
   KebutuhanPenggunaDetail ({super.key, required this.kebutuhanpengguna});
 
   @override

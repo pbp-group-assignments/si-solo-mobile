@@ -11,10 +11,10 @@ class Kebutuhan{
   String deskripsiKebutuhan;
 
   Kebutuhan({
-    required this.tokoKebutuhan;
-    required this.namaKebutuhan;
-    required this.hargaKebutuhan;
-    required this.deskripsiKebutuhan;
+    required this.tokoKebutuhan,
+    required this.namaKebutuhan,
+    required this.hargaKebutuhan,
+    required this.deskripsiKebutuhan,
   });
 
   factory Kebutuhan.fromJson(Map<String, dynamic> json) => Kebutuhan(

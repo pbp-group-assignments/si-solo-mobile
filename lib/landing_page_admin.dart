@@ -114,10 +114,10 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                         titleText: 'Layanan Pengaduan',
                         subTitleText: 'Lihat daftar pengaduan',
                         onTap: () {
-                          Navigator.pushReplacement(
-                            context, 
-                            MaterialPageRoute(builder: (context) => const ListPengaduanPage(index: 0,))
-                          );
+                          // Navigator.pushReplacement(
+                          //   context, 
+                          //   MaterialPageRoute(builder: (context) => const ListPengaduanPage())
+                          // );
                         },
                       ),
                     ),
@@ -140,10 +140,10 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                         titleText: 'Saran Pembangunan Kota',
                         subTitleText: 'Lihat kritik dan saran yang diberikan warga',
                         onTap: () {
-                          Navigator.pushReplacement(
-                            context, 
-                            MaterialPageRoute(builder: (context) => const ListKritikSaranPage(index: 0,))
-                          );
+                          // Navigator.pushReplacement(
+                          //   context, 
+                          //   MaterialPageRoute(builder: (context) => const ListKritikSaranPage())
+                          // );
                         },
                       ),
                     ),
