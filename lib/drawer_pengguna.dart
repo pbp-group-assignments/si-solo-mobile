@@ -29,6 +29,15 @@ Drawer buildDrawer(BuildContext context) {
           }
         ),
         ListTile(
+            title: const Text('Info Kebutuhan Pokok'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InfoKebutuhanPenggunaPage())
+              );
+            }
+        ),
+        ListTile(
           title: const Text('Layanan Pengaduan'),
           onTap: () {
             Navigator.pushReplacement(

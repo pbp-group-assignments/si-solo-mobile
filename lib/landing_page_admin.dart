@@ -128,7 +128,6 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                       borderRadius: BorderRadius.circular(10),
                       side: BorderSide(color: Colors.purpleAccent, width: 2,),
                     ),
-
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
                       child: GFListTile(
