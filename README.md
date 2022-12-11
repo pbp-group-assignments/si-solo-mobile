@@ -1,6 +1,6 @@
 # si-solo-mobile
 
-[![Develop](actions-badge)](https://github.com/pbp-group-assignments/si-solo-mobile/commits/main)
+[![Develop][actions-badge](https://github.com/pbp-group-assignments/si-solo-mobile/commits/main)
 [![Build status](https://build.appcenter.ms/v0.1/apps/6bb8b49c-3913-4b66-ae04-707a9749474c/branches/main/badge)](https://appcenter.ms)
 
 ## Tautan APK
