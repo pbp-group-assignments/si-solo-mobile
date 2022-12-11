@@ -93,6 +93,60 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                       ),
                     ),
                   ),
+
+                  const SizedBox(height: 10,),
+
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                    ),
+
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/pengaduan_cover.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Layanan Pengaduan',
+                        subTitleText: 'Lihat daftar pengaduan',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const ListPengaduanPage(index: 0,))
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10,),
+
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                    ),
+
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/saran_pembangunan_cover.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Saran Pembangunan Kota',
+                        subTitleText: 'Lihat kritik dan saran yang diberikan warga',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const ListKritikSaranPage(index: 0,))
+                          );
+                        },
+                      ),
+                    ),
+                  ),
                 ],
               )),
             ],
