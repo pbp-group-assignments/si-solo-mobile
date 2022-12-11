@@ -29,7 +29,6 @@ Drawer buildDrawer(BuildContext context) {
           }
         ),
         ListTile(
-<<<<<<< HEAD
             title: const Text('Info Kebutuhan Pokok'),
             onTap: () {
               Navigator.pushReplacement(
@@ -38,9 +37,7 @@ Drawer buildDrawer(BuildContext context) {
               );
             }
         ),
-
-    
-=======
+        ListTile(
           title: const Text('Layanan Pengaduan'),
           onTap: () {
             Navigator.pushReplacement(
@@ -74,8 +71,8 @@ Drawer buildDrawer(BuildContext context) {
               );
             }
         ),
->>>>>>> b1c0446bff1c7b628accfc10cb762eb3add4e51f
       ]
     )
   );
 }
+
