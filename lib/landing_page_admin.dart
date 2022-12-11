@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:si_solo/drawer_admin.dart';
 import 'package:si_solo/admin/page/list_pendaftaran_pelaku_usaha.dart';
 import 'package:si_solo/admin/page/list_pendaftaran_usaha.dart';
+import 'package:si_solo/info_transportasi/page/transport_page.dart';
+import 'package:si_solo/info_sarana_kesehatan/page/healthcenter_page.dart';
 import 'package:getwidget/components/avatar/gf_avatar.dart';
 import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 
@@ -73,6 +75,60 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                           Navigator.pushReplacement(
                             context, 
                             MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPage(index: 0,))
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10,),
+
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                    ),
+
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/info-transport-adminpage.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Info Transportasi Umum',
+                        subTitleText: 'List transportasi umum di Kota Solo',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const TransportPage())
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10,),
+
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                    ),
+
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/info-sarana-kesehatan-adminpage.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Info Sarana Kesehatan',
+                        subTitleText: 'List sarana kesehatan di Kota Solo',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const HealthCenterPage())
                           );
                         },
                       ),
