@@ -23,7 +23,6 @@ class DetailPendaftaranUsaha extends StatelessWidget{
             child: Text(
               usaha.namaUsaha,
               style: GoogleFonts.lato(
-                  // textStyle: Theme.of(context).textTheme.headline3,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
@@ -444,22 +443,6 @@ class DetailPendaftaranUsaha extends StatelessWidget{
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,)));
             },
           )
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: ElevatedButton(
-          //     style: ElevatedButton.styleFrom(
-          //       minimumSize: const Size.fromHeight(50),
-          //     ),
-          //     onPressed: () {
-          //       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,)));
-          //     },
-
-          //     child: const Text(
-          //       "Back",
-          //       style: TextStyle(color: Colors.white),
-          //     ),
-          //   ),
-          // ),
         ]),
       ),
     );

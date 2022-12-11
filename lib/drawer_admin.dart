@@ -23,7 +23,7 @@ Drawer buildDrawer(BuildContext context) {
           onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage())
+              MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage(index: 0,))
             );
           }
         ),
@@ -32,7 +32,7 @@ Drawer buildDrawer(BuildContext context) {
           onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPage())
+              MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPage(index: 0,))
             );
           }
         ),
