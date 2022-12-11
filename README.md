@@ -4,7 +4,7 @@
 [![Build status](https://build.appcenter.ms/v0.1/apps/6bb8b49c-3913-4b66-ae04-707a9749474c/branches/main/badge)](https://appcenter.ms)
 
 ## Tautan APK
-- [APK](https://install.appcenter.ms/orgs/pbp-group-b12/apps/si-solo/distribution_groups/public)
+[APK Si Solo](https://install.appcenter.ms/orgs/pbp-group-b12/apps/si-solo/distribution_groups/public)
 
 ## Nama-nama anggota kelompok
 - Clarissa Thea Aryanto (NPM: 2106634673)
