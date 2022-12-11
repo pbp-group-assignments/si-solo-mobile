@@ -3,7 +3,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:si_solo/drawer_pengguna.dart';
 import 'package:si_solo/landing_page_pengguna.dart';
 import 'package:si_solo/main-page/model/user.dart';
-import 'package:si_solo/layanan_pengaduan/util/fetch_pengaduan';
+import 'package:si_solo/layanan_pengaduan/util/fetch_pengaduan.dart';
 
 class FormPengaduanPage extends StatefulWidget{
   const FormPengaduanPage({super.key});
@@ -103,11 +103,11 @@ class _FormPengaduanPageState extends State<FormPengaduanPage>{
               ),
               onPressed: (){
                 if(_formKey.currentState!.validate()){
-                  daftarPengaduan(UserLogin.listUserLogin[0].masalah, UserLogin.listUserLogin[0].deskripsiMasalah);
+                  daftarPengaduan(_masalah, _deskripsiMasalah);
                   clearText();
                   setState(() {
-                      _masalah = null;
-                      _deskripsiMasalah = null;
+                      _masalah = "";
+                      _deskripsiMasalah = "";
                   });
                 }
               },
