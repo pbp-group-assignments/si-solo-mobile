@@ -10,7 +10,7 @@ Future<void> fetchLogin(String username, String password) async {
   http.Response response = await http.post(url,
       headers: {"Content-Type": 'application/json; charset=UTF-8'},
       body: json.encode(data));
-
+  print(response.body);
   var dataResponse = jsonDecode(utf8.decode(response.bodyBytes));
   // print(dataResponse);
 
