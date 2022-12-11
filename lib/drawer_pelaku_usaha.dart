@@ -3,6 +3,8 @@ import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pengg
 import 'package:si_solo/landing_page_pelaku_usaha.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/daftar_usaha_baru.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pelaku_usaha.dart';
+import 'info_kuliner/page/list_kuliner_pelaku.dart';
+import 'info_wisata/page/list_wisata_pelaku.dart';
 
 Drawer buildDrawer(BuildContext context) {
   return Drawer(
@@ -34,6 +36,24 @@ Drawer buildDrawer(BuildContext context) {
               MaterialPageRoute(builder: (context) => const DaftarUsahaBaruPage())
             );
           }
+        ),
+        ListTile(
+            title: const Text('Info Wisata'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InfoWisataPelakuPage())
+              );
+            }
+        ),
+        ListTile(
+            title: const Text('Info Kuliner'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InfoKulinerPelakuPage())
+              );
+            }
         ),
       ]
     )
