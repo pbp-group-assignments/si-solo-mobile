@@ -1,5 +1,10 @@
 # si-solo-mobile
 
+[![Develop][actions2-badge]][commits-gh]
+[![Pre-Release][actions-badge]][commits-gh]
+[![Release][actions1-badge]][commits-gh]
+[![Build status](https://build.appcenter.ms/v0.1/apps/6bb8b49c-3913-4b66-ae04-707a9749474c/branches/main/badge)](https://appcenter.ms)
+
 ## Nama-nama anggota kelompok
 - Clarissa Thea Aryanto (NPM: 2106634673)
 - Fabian Akmal Arkandion (NPM: 2106750660)
