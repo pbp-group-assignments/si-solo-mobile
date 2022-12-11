@@ -1,6 +1,6 @@
 # si-solo-mobile
 
-[![Develop](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/develop.yml/badge.svg)](https://github.com/pbp-group-assignments/si-solo-mobile/commits/main)
+[![Staging](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/staging.yml/badge.svg)](https://github.com/pbp-group-assignments/si-solo-mobile/commits/main)
 [![Pre-Release](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/pre-release.yml/badge.svg)](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/pre-release.yml)
 [![Release](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/release.yml/badge.svg)](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/release.yml)
 [![Build status](https://build.appcenter.ms/v0.1/apps/6bb8b49c-3913-4b66-ae04-707a9749474c/branches/main/badge)](https://appcenter.ms)
