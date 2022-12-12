@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:si_solo/layanan_pengaduan/model/pengaduan.dart';
 
 Future<List<Pengaduan>> fetchPengaduan() async {
-  var url = Uri.parse('https://si-solo.up.railway.app/Admin/layanan-pengaduan-json');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/pengaduan-json');
   var response = await http.get(
     url,
     headers: {
