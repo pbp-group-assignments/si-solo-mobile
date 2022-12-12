@@ -141,13 +141,14 @@ class _RegisterFormPage extends State<RegisterFormPage> {
                                   if (_formKey.currentState!.validate()) {
                                     registerUser(_username, _password1);
                                     Future.delayed(Duration(milliseconds: 3000))
-                                        .then((_) {});
-
-                                    Navigator.pushReplacement(
+                                        .then((_) {
+                                          Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const RegisterAdditionPage()));
+                                                const LoginFormPage()));
+                                        });
+
                                     _clearUsername.clear();
                                     _clearPassword1.clear();
                                     _clearPassword2.clear();
@@ -191,6 +192,7 @@ class _RegisterFormPage extends State<RegisterFormPage> {
             onPressed: () => Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const LoginFormPage()))));
+                    builder: (context) => const MyHomePage()))));
+
   }
 }

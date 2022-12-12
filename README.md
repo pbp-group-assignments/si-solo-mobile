@@ -1,5 +1,12 @@
 # si-solo-mobile
 
+[![Pre-Release](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/pre-release.yml/badge.svg)](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/pre-release.yml)
+[![Release](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/release.yml/badge.svg)](https://github.com/pbp-group-assignments/si-solo-mobile/actions/workflows/release.yml)
+[![Build status](https://build.appcenter.ms/v0.1/apps/6bb8b49c-3913-4b66-ae04-707a9749474c/branches/main/badge)](https://appcenter.ms)
+
+## Tautan APK
+[APK Si Solo](https://install.appcenter.ms/orgs/pbp-group-b12/apps/si-solo/distribution_groups/public)
+
 ## Nama-nama anggota kelompok
 - Clarissa Thea Aryanto (NPM: 2106634673)
 - Fabian Akmal Arkandion (NPM: 2106750660)
@@ -9,7 +16,7 @@
 - Sakinah Richas (NPM: 2106751511)
 
 ## Deskripsi aplikasi
-Aplikasi yang kami ajukan adalah Solo smart city, bernama 'Si Solo' atau kependekan dari Sistem Informasi Solo. Smart city atau kota cerdas merupakan wilayah kota yang telah mengintegrasikan teknologi informasi dan komunikasi dalam tata kelola sehari-hari. Alasan kami memilih kota Solo adalah karena menurut kami kota Solo memiliki banyak potensi namun belum memiliki website untuk menyalurkan potensi-potensi tersebut. Manfaat dari aplikasi ini adalah memperbaiki permasalahan di masyarakat, meningkatkan layanan publik, menciptakan pemerintahan yang lebih baik, mencerdaskan masyarakat, serta mengelola potensi SDM di kota Solo. Menurut kami, aplikasi smart city yang kami buat dapat menyelesaikan beberapa isu yang dibahas dalam G20, seperti ekonomi digital, pariwisata, kesehatan, pembangunan, serta lingkungan.
+Aplikasi yang kami ajukan adalah Solo smart city, bernama 'Si Solo' atau kependekan dari Sistem Informasi Solo. Smart city atau kota cerdas merupakan wilayah kota yang telah mengintegrasikan teknologi informasi dan komunikasi dalam tata kelola sehari-hari. Alasan kami memilih kota Solo adalah karena menurut kami kota Solo memiliki banyak potensi namun belum memiliki aplikasi untuk menyalurkan potensi-potensi tersebut. Manfaat dari aplikasi ini adalah memperbaiki permasalahan di masyarakat, meningkatkan layanan publik, menciptakan pemerintahan yang lebih baik, mencerdaskan masyarakat, serta mengelola potensi SDM di kota Solo. Menurut kami, aplikasi smart city yang kami buat dapat menyelesaikan beberapa isu yang dibahas dalam G20, seperti ekonomi digital, pariwisata, kesehatan, pembangunan, serta lingkungan.
 
 Terdapat empat role/peran pengguna pada aplikasi ini, yaitu:
 1. Pengguna asing: Merupakan pengguna yang belum login ke website. Pengguna asing hanya dapat mengakses landing page, page informasi tentang lokasi kuliner & wisata, page informasi tentang sarana kesehatan, page informasi tentang transportasi umum, dan page informasi tentang lokasi penjualan kebutuhan pokok.

@@ -40,27 +40,29 @@ Drawer buildDrawer(BuildContext context) {
         ListTile(
           title: const Text('List Pengaduan'),
           onTap: () {
-            Navigator.pushReplacement(
-              context, 
-              MaterialPageRoute(builder: (context) => const ListPengaduanPage(index: 0,))
-            );
+            // Navigator.pushReplacement(
+            //   context, 
+            //   MaterialPageRoute(builder: (context) => const ListPengaduanPage(index: 0,))
+            // );
           }
         ),
         ListTile(
           title: const Text('List Kritik Saran'),
           onTap: () {
+            // Navigator.pushReplacement(
+            //   context, 
+            //   MaterialPageRoute(builder: (context) => const ListKritikSaranPage(index: 0,))
+            // );
+          }
+        ),
+        ListTile(
+          title: const Text('Info Wisata'),
+          onTap: () {
             Navigator.pushReplacement(
               context, 
-              MaterialPageRoute(builder: (context) => const ListKritikSaranPage(index: 0,))
+              MaterialPageRoute(builder: (context) => const InfoWisataPage())
             );
           }
-            title: const Text('Info Wisata'),
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const InfoWisataPage())
-              );
-            }
         ),
         ListTile(
             title: const Text('Info Kuliner'),
