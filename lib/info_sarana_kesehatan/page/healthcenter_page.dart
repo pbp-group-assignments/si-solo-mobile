@@ -43,27 +43,44 @@ class HealthCenterPageState extends State<HealthCenterPage> {
       }
 
       return Card(
-        elevation: 0,
+        elevation: 3,
         margin: const EdgeInsets.all(5),
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: borderColor,
-          ),
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
+        shape: Border.all(
+          color: borderColor
         ),
         child: Column(
           children: [
             Image.asset('assets/images/$image'),
-            Text(
-              healthCenter.fields.name,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              )
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Text(
+                    healthCenter.fields.name,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  ListTile(
+                    leading: const Icon(Icons.home),
+                    title: Text('Alamat:\n$address'),
+                  ),
+                  const SizedBox(height: 5),
+                  ListTile(
+                    leading: const Icon(Icons.phone),
+                    title: Text('Kontak: $contact'),
+                  ),
+                  const SizedBox(height: 5),
+                  ListTile(
+                    leading: const Icon(Icons.pin_drop),
+                    title: Text('Lihat lokasi disini:\n$locationURL'),
+                  ),
+                ],
+              ),
             ),
-            Text('Alamat: $address'),
-            Text('Kontak: $contact'),
-            Text('Lihat lokasi sarana kesehatan disini: $locationURL'),
           ],
         ),
       );
@@ -80,7 +97,7 @@ class HealthCenterPageState extends State<HealthCenterPage> {
   Widget build(BuildContext context) {
     Widget drawer = const DrawerHealthCenterRegular();
 
-    if (UserLogin.listUserLogin[0].role == 'Admin') {
+    if (UserLogin.listUserLogin.isNotEmpty && UserLogin.listUserLogin[0].role == 'Admin') {
       drawer = const DrawerHealthCenterAdmin();
     }
 
