@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:si_solo/main-page/page/login.dart';
 import 'package:si_solo/main-page/util/fetch_user.dart';
 import 'package:si_solo/main-page/model/user.dart';
 import 'package:si_solo/landing_page_pengguna.dart';
@@ -7,40 +8,34 @@ import 'package:si_solo/main.dart';
 import 'package:si_solo/register_addition.dart';
 import 'package:si_solo/landing_page_admin.dart';
 import 'package:si_solo/landing_page_pelaku_usaha.dart';
-import 'package:provider/provider.dart';
-import 'package:pbp_django_auth/pbp_django_auth.dart';
 
-class LoginFormPage extends StatefulWidget {
-  const LoginFormPage({super.key});
+class RegisterFormPage extends StatefulWidget {
+  const RegisterFormPage({super.key});
 
   @override
-  State<LoginFormPage> createState() => _LoginFormPage();
+  State<RegisterFormPage> createState() => _RegisterFormPage();
 }
 
-class _LoginFormPage extends State<LoginFormPage> {
+class _RegisterFormPage extends State<RegisterFormPage> {
   final _formKey = GlobalKey<FormState>();
   final _clearUsername = TextEditingController();
-  final _clearPassword = TextEditingController();
+  final _clearPassword1 = TextEditingController();
+  final _clearPassword2 = TextEditingController();
   String _username = "";
-  String _password = "";
+  String _password1 = "";
+  String _password2 = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Login'),
+          title: const Text('Register'),
         ),
         body: Form(
             key: _formKey,
             child: Container(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(children: [
-                  const Text("Login",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-                  const SizedBox(
-                    height: 10,
-                  ),
                   Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -82,20 +77,52 @@ class _LoginFormPage extends State<LoginFormPage> {
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
                               ),
-                              controller: _clearPassword,
+                              controller: _clearPassword1,
                               onChanged: (String? value) {
                                 setState(() {
-                                  _password = value!;
+                                  _password1 = value!;
                                 });
                               },
                               onSaved: (String? value) {
                                 setState(() {
-                                  _password = value!;
+                                  _password1 = value!;
                                 });
                               },
                               validator: (String? value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Password kosong!';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            TextFormField(
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                labelText: "Password",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                              ),
+                              controller: _clearPassword2,
+                              onChanged: (String? value) {
+                                setState(() {
+                                  _password2 = value!;
+                                });
+                              },
+                              onSaved: (String? value) {
+                                setState(() {
+                                  _password2 = value!;
+                                });
+                              },
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Password kosong!';
+                                }
+                                if (_password1 != _password2) {
+                                  return 'Password tidak sama!';
                                 }
                                 return null;
                               },
@@ -110,75 +137,25 @@ class _LoginFormPage extends State<LoginFormPage> {
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.blue),
                                 ),
-                                onPressed: () async {
+                                onPressed: () {
                                   if (_formKey.currentState!.validate()) {
-                                    fetchLogin(_username, _password);
+                                    registerUser(_username, _password1);
                                     Future.delayed(Duration(milliseconds: 3000))
-                                        .then((_) {
-                                      if (UserLogin.listUserLogin[0].status ==
-                                          'register') {
-                                        UserLogin.loggedInUser =
-                                            UserLogin.listUserLogin[0];
+                                        .then((_) {});
 
-                                        if (UserLogin.listUserLogin[0].role ==
-                                            'Admin') {
-                                          Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const LandingAdminPage()));
-                                        } else if (UserLogin
-                                                .listUserLogin[0].role ==
-                                            'Pengguna') {
-                                          Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const LandingPenggunaPage()));
-                                        } else {
-                                          Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const LandingPelakuUsahaPage()));
-                                        }
-                                      } else if (UserLogin
-                                              .listUserLogin[0].status ==
-                                          'notRegister') {
-                                        UserLogin.loggedInUser =
-                                            UserLogin.listUserLogin[0];
-
-                                        Navigator.pushReplacement(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const RegisterAdditionPage()));
-                                      } else {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(SnackBar(
-                                          backgroundColor: Colors.red,
-                                          content: const Text(
-                                              "Akun tidak terdaftar!"),
-                                          action: SnackBarAction(
-                                            label: 'Close',
-                                            textColor: Colors.white,
-                                            onPressed: () {
-                                              ScaffoldMessenger.of(context)
-                                                  .hideCurrentSnackBar();
-                                            },
-                                          ),
-                                        ));
-
-                                        UserLogin.listUserLogin.removeAt(0);
-                                      }
-                                    });
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RegisterAdditionPage()));
                                     _clearUsername.clear();
-                                    _clearPassword.clear();
+                                    _clearPassword1.clear();
+                                    _clearPassword2.clear();
                                   } else {
                                     ScaffoldMessenger.of(context)
                                         .showSnackBar(SnackBar(
                                       backgroundColor: Colors.red,
-                                      content: Text(
+                                      content: const Text(
                                           "Mohon isi data dengan lengkap!"),
                                       action: SnackBarAction(
                                         label: 'Close',
@@ -192,7 +169,7 @@ class _LoginFormPage extends State<LoginFormPage> {
                                   }
                                 },
                                 child: const Text(
-                                  "Login",
+                                  "Register",
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),
@@ -211,7 +188,9 @@ class _LoginFormPage extends State<LoginFormPage> {
         floatingActionButton: FloatingActionButton.extended(
             tooltip: 'Kembali',
             label: const Text("Kembali"),
-            onPressed: () => Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => const MyHomePage()))));
+            onPressed: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const LoginFormPage()))));
   }
 }

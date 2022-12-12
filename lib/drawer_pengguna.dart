@@ -3,8 +3,9 @@ import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pengg
 import 'package:si_solo/landing_page_pengguna.dart';
 import 'package:si_solo/layanan_pengaduan/page/form_pengaduan.dart';
 import 'package:si_solo/saran_pembangunan_kota/page/form_kritik_saran.dart';
-import 'info_kuliner/page/list_kuliner_pengguna.dart';
-import 'info_wisata/page/list_wisata_pengguna.dart';
+import 'package:si_solo/info_kuliner/page/list_kuliner_pengguna.dart';
+import 'package:si_solo/info_wisata/page/list_wisata_pengguna.dart';
+import 'package:si_solo/info_kebutuhan/page/list_kebutuhan_pengguna.dart';
 
 Drawer buildDrawer(BuildContext context) {
   return Drawer(
@@ -29,7 +30,6 @@ Drawer buildDrawer(BuildContext context) {
           }
         ),
         ListTile(
-<<<<<<< HEAD
             title: const Text('Info Kebutuhan Pokok'),
             onTap: () {
               Navigator.pushReplacement(
@@ -38,9 +38,7 @@ Drawer buildDrawer(BuildContext context) {
               );
             }
         ),
-
-    
-=======
+        ListTile(
           title: const Text('Layanan Pengaduan'),
           onTap: () {
             Navigator.pushReplacement(
@@ -57,13 +55,15 @@ Drawer buildDrawer(BuildContext context) {
               MaterialPageRoute(builder: (context) => const FormSaranPage())
             );
           }
-            title: const Text('Info Wisata'),
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const InfoWisataPenggunaPage())
-              );
-            }
+        ),
+        ListTile(
+          title: const Text('Info Wisata'),
+          onTap: () {
+            Navigator.pushReplacement(
+              context, 
+              MaterialPageRoute(builder: (context) => const InfoWisataPenggunaPage())
+            );
+          }
         ),
         ListTile(
             title: const Text('Info Kuliner'),
@@ -74,7 +74,6 @@ Drawer buildDrawer(BuildContext context) {
               );
             }
         ),
->>>>>>> b1c0446bff1c7b628accfc10cb762eb3add4e51f
       ]
     )
   );
