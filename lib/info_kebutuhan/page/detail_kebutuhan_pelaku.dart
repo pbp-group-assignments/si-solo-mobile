@@ -2,9 +2,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:si_solo/info_kebutuhan/model/kebutuhan.dart';
 import 'package:si_solo/drawer_pelaku_usaha.dart';
 import 'package:flutter/material.dart';
+import 'package:si_solo/info_kebutuhan/model/kebutuhan.dart';
 
 class KebutuhanPelakuDetail  extends StatelessWidget {
-  final Kebutuhan kebutuhanpelaku;
+  final KebutuhanModel kebutuhanpelaku;
   KebutuhanPelakuDetail ({super.key, required this.kebutuhanpelaku});
 
   @override

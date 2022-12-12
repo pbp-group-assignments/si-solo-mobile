@@ -25,7 +25,8 @@ class _LandingAdminPage extends State<LandingAdminPage> {
           title: Text('Halaman Utama'),
         ),
         drawer: buildDrawer(context),
-        body: Container(
+        body: SingleChildScrollView(
+          child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
           child: Column(
             children: [
@@ -313,6 +314,7 @@ class _LandingAdminPage extends State<LandingAdminPage> {
               )),
             ],
           ),
+        ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton.extended(

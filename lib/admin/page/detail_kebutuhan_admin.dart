@@ -20,7 +20,7 @@ class KebutuhanAdminDetail  extends StatelessWidget {
         child: Column(children: [
           Center(
               child: Text(
-                kebutuhanadmin.fields.tokoKebutuhan.toString(),
+                kebutuhanadmin.tokoKebutuhan.toString(),
                 style: GoogleFonts.lato(
                   // textStyle: Theme.of(context).textTheme.headline3,
                   fontSize: 30,
@@ -36,7 +36,7 @@ class KebutuhanAdminDetail  extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      "Nama Kebutuhan: ${kebutuhanadmin.fields.namaKebutuhan}",
+                      "Nama Kebutuhan: ${kebutuhanadmin.namaKebutuhan}",
                       style: GoogleFonts.lato(
                         // textStyle: Theme.of(context).textTheme.headline3,
                         fontSize: 18,
@@ -52,7 +52,7 @@ class KebutuhanAdminDetail  extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      "Harga Kebutuhan: ${kebutuhanadmin.fields.hargaKebutuhan}",
+                      "Harga Kebutuhan: ${kebutuhanadmin.hargaKebutuhan}",
                       style: GoogleFonts.lato(
                         // textStyle: Theme.of(context).textTheme.headline3,
                         fontSize: 18,
@@ -68,7 +68,7 @@ class KebutuhanAdminDetail  extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      "Deskripsi Kebutuhan: ${kebutuhanadmin.fields.deskripsiKebutuhan}",
+                      "Deskripsi Kebutuhan: ${kebutuhanadmin.deskripsiKebutuhan}",
                       style: GoogleFonts.lato(
                         // textStyle: Theme.of(context).textTheme.headline3,
                         fontSize: 18,

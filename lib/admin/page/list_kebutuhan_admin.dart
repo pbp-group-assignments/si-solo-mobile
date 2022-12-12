@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:si_solo/drawer_admin.dart';
-import 'package:si_solo/info_kebutuhan/util/fetch_kebutuhan_pelaku.dart';
+import 'package:si_solo/admin/util/fetch_kebutuhan_admin.dart';
 import 'package:si_solo/admin/page/detail_kebutuhan_admin.dart';
 
 class InfoKebutuhanPage extends StatefulWidget {
