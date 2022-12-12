@@ -5,6 +5,9 @@ import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pelak
 import 'package:google_fonts/google_fonts.dart';
 import 'package:getwidget/getwidget.dart';
 
+import '../../info_kuliner/page/form_kuliner_pelaku.dart';
+import '../../info_wisata/page/delete_wisata_pelaku.dart';
+
 class DetailPendaftaranUsaha extends StatelessWidget{
   final Usaha usaha;
   const DetailPendaftaranUsaha({super.key, required this.usaha});
@@ -433,15 +436,29 @@ class DetailPendaftaranUsaha extends StatelessWidget{
           ),
 
           const Spacer(),
-          GFButton(
-            text: "Back",
-            color: Colors.purpleAccent,
-            shape: GFButtonShape.pills,
-            fullWidthButton: true,
-            size: GFSize.LARGE,
-            onPressed: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,)));
-            },
+          Row(
+            children: [
+              GFButton(
+                text: "Back",
+                color: Colors.purpleAccent,
+                shape: GFButtonShape.pills,
+                fullWidthButton: true,
+                size: GFSize.LARGE,
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPendaftaranUsahaPelakuUsahaPage(index: 0,)));
+                },
+              ),
+              GFButton(
+                text: "Tambah Menu",
+                color: Colors.purpleAccent,
+                shape: GFButtonShape.pills,
+                fullWidthButton: true,
+                size: GFSize.LARGE,
+                onPressed: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => FormKulinerPelakuPage(usaha: usaha)));
+                },
+              ),
+            ],
           )
         ]),
       ),

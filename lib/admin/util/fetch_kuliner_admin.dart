@@ -3,7 +3,7 @@ import 'package:si_solo/info_kuliner/model/show_tempat_kuliner.dart';
 import 'dart:convert';
 
 Future<List<TempatKulinerModel>> fetchInfoKuliner() async {
-  var url = Uri.parse('https://si-solo.up.railway.app/tempat-kuliner/manage-json/');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/list-kuliner-json/');
   var response = await http.get(
     url,
     headers: {

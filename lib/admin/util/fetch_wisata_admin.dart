@@ -3,7 +3,7 @@ import 'dart:convert';
 import '../../info_wisata/model/show_tempat_wisata.dart';
 
 Future<List<TempatWisataModel>> fetchInfoWisata() async {
-  var url = Uri.parse('https://si-solo.up.railway.app/tempat-wisata/manage-json/');
+  var url = Uri.parse('https://si-solo.up.railway.app/Admin/list-wisata-json/');
   var response = await http.get(
     url,
     headers: {
