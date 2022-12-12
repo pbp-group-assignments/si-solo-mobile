@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:si_solo/drawer_admin.dart';
-import 'package:flutter/material.dart';
-import 'package:si_solo/drawer_pengguna.dart';
-import 'package:si_solo/info_kebutuhan/page/detail_kebutuhan_pengguna.dart';
-import 'package:si_solo/info_kebutuhan/utils/fetch_pelaku.dart';
+import 'package:si_solo/info_kebutuhan/util/fetch_kebutuhan_pelaku.dart';
+import 'package:si_solo/admin/page/detail_kebutuhan_admin.dart';
 
-
-class InfoKebutuhanPenggunaPage extends StatefulWidget {
-  const InfoKebutuhanPenggunaPage({super.key});
+class InfoKebutuhanPage extends StatefulWidget {
+  const InfoKebutuhanPage({super.key});
 
   @override
-  State<InfoKebutuhanPenggunaPage> createState() => _InfoKebutuhanPenggunaState();
+  State<InfoKebutuhanPage> createState() => _InfoKebutuhanState();
 }
 
-class _InfoKebutuhanPenggunaState extends State<InfoKebutuhanPenggunaPage> {
+class _InfoKebutuhanState extends State<InfoKebutuhanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +28,7 @@ class _InfoKebutuhanPenggunaState extends State<InfoKebutuhanPenggunaPage> {
                   return Column(
                     children: const [
                       Text(
-                        "Toko Kebutuhan tidak ada",
+                        "Kebutuhan tidak ada",
                         style:
                         TextStyle(color: Color(0xff59A5D8), fontSize: 20),
                       ),
@@ -45,8 +42,8 @@ class _InfoKebutuhanPenggunaState extends State<InfoKebutuhanPenggunaPage> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => KebutuhanPenggunaDetail(
-                                  kebutuhanpengguna: snapshot.data![index])),
+                              builder: (context) => KebutuhanAdminDetail(
+                                  kebutuhanadmin: snapshot.data![index])),
                         ),
                         child: Container(
                             margin: const EdgeInsets.symmetric(

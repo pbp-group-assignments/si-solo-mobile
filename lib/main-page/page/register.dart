@@ -148,6 +148,7 @@ class _RegisterFormPage extends State<RegisterFormPage> {
                                             builder: (context) =>
                                                 const LoginFormPage()));
                                         });
+
                                     _clearUsername.clear();
                                     _clearPassword1.clear();
                                     _clearPassword2.clear();
@@ -192,5 +193,6 @@ class _RegisterFormPage extends State<RegisterFormPage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => const MyHomePage()))));
+
   }
 }

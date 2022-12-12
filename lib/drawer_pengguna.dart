@@ -3,8 +3,8 @@ import 'package:si_solo/pendaftaran_izin_usaha/page/list_pendaftaran_usaha_pengg
 import 'package:si_solo/landing_page_pengguna.dart';
 import 'package:si_solo/layanan_pengaduan/page/form_pengaduan.dart';
 import 'package:si_solo/saran_pembangunan_kota/page/form_kritik_saran.dart';
-import 'info_kuliner/page/list_kuliner_pengguna.dart';
-import 'info_wisata/page/list_wisata_pengguna.dart';
+import 'package:si_solo/info_kuliner/page/list_kuliner_pengguna.dart';
+import 'package:si_solo/info_wisata/page/list_wisata_pengguna.dart';
 import 'package:si_solo/info_kebutuhan/page/list_kebutuhan_pengguna.dart';
 
 Drawer buildDrawer(BuildContext context) {

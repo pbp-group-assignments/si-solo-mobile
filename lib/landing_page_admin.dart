@@ -98,6 +98,83 @@ class _LandingAdminPage extends State<LandingAdminPage> {
 
                   const SizedBox(height: 10,),
 
+                  // Card(
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(10),
+                  //     side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                  //   ),
+                  //   child: Container(
+                  //     padding: const EdgeInsets.symmetric(
+                  //         horizontal: 3, vertical: 7),
+                  //     child: GFListTile(
+                  //       avatar: GFAvatar(
+                  //         child: Image.asset('assets/images/business_icon.png'),
+                  //         backgroundColor: Colors.white,
+                  //       ),
+                        // titleText: 'Pendaftaran Pelaku Usaha',
+                        // subTitleText:
+                        //     'List pengguna yang mendaftar sebagai pelaku usaha',
+                        // onTap: () {
+                        //   Navigator.pushReplacement(
+                        //     context, 
+                        //     MaterialPageRoute(builder: (context) => const ListPendaftaranPelakuUsahaPage(index: 0,))
+                        //   child: Image.asset('assets/images/pengaduan_cover.jpg'),
+                        //   backgroundColor: Colors.white,
+                        // ),
+                  //       titleText: 'Layanan Pengaduan',
+                  //       subTitleText: 'Lihat daftar pengaduan',
+                  //       onTap: () {
+                          // Navigator.pushReplacement(
+                          //   context, 
+                          //   MaterialPageRoute(builder: (context) => const ListPengaduanPage(index: 0,))
+                          // );
+
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) =>
+                          //             const ListPendaftaranPelakuUsahaPage(
+                          //               index: 0,
+                          //             )));
+                  //       },
+                  //     ),
+                  //   ),
+                  // ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(
+                        color: Colors.purpleAccent,
+                        width: 2,
+                      ),
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/umkm_icon.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Pendaftaran Usaha',
+                        subTitleText: 'List usaha yang didaftarkan',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ListPendaftaranUsahaPage(
+                                        index: 0,
+                                      )));
+                        },
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10,),
+
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -202,6 +279,33 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                       ),
                     ),
                   ),
+
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.purpleAccent, width: 2,),
+                    ),
+
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
+                      child: GFListTile(
+                        avatar: GFAvatar(
+                          child: Image.asset('assets/images/info-transport-adminpage.jpg'),
+                          backgroundColor: Colors.white,
+                        ),
+                        titleText: 'Info Kebutuhan Pokok',
+                        subTitleText: 'List Toko Kebutuhan Pokok di Kota Solo',
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context, 
+                            MaterialPageRoute(builder: (context) => const InfoKebutuhanPenggunaPage())
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10,),
                 ],
               )),
             ],

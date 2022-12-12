@@ -1,23 +1,23 @@
 import 'dart:convert';
 
-List<Kebutuhan> KebutuhanFromJson(String str) => List<Kebutuhan>.from(json.decode(str).map((x) => Kebutuhan.fromJson(x)));
+List<KebutuhanModel> kebutuhanModelFromJson(String str) => List<KebutuhanModel>.from(json.decode(str).map((x) => KebutuhanModel.fromJson(x)));
 
-String KebutuhanToJson(List<Kebutuhan> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String kebutuhanModelToJson(List<KebutuhanModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Kebutuhan{
+class KebutuhanModel{
   String tokoKebutuhan;
   String namaKebutuhan;
   String hargaKebutuhan;
   String deskripsiKebutuhan;
 
-  Kebutuhan({
+  KebutuhanModel({
     required this.tokoKebutuhan,
     required this.namaKebutuhan,
     required this.hargaKebutuhan,
     required this.deskripsiKebutuhan,
   });
 
-  factory Kebutuhan.fromJson(Map<String, dynamic> json) => Kebutuhan(
+  factory KebutuhanModel.fromJson(Map<String, dynamic> json) => KebutuhanModel(
     tokoKebutuhan: json["fields"]["tokoKebutuhan"], 
     namaKebutuhan: json["fields"]["namaKebutuhan"], 
     hargaKebutuhan: json["fields"]["hargaKebutuhan"], 
