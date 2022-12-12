@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:si_solo/info_kuliner/model/show_tempat_kuliner.dart';
 import '../../drawer_admin.dart';
+import '../../main-page/model/user.dart';
 
 class KulinerAdminDetail  extends StatelessWidget {
   final TempatKulinerModel kulineradmin;
