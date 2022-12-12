@@ -34,7 +34,7 @@ class MyCardItem extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const LandingPenggunaPage()));
+                                    const FormPengaduanPage()));
                       },
                     ),
                     Padding(
@@ -79,7 +79,7 @@ class MyCardItem extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const LandingPenggunaPage()));
+                                    const FormSaranPage()));
                       },
                     ),
                     Padding(
