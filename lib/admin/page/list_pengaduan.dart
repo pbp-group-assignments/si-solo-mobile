@@ -10,7 +10,7 @@ class ListPengaduanPage extends StatefulWidget {
   State<ListPengaduanPage> createState() => _ListPengaduanPage();
 }
 
-class _ListPengaduanPage extends State<InfoWisataPage> {
+class _ListPengaduanPage extends State<ListPengaduanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +35,7 @@ class _ListPengaduanPage extends State<InfoWisataPage> {
                         return ListView.builder(
                             itemCount: snapshot.data!.length,
                             itemBuilder: (_, index) => Container(
+                              child:
                                 Card(
                                     child: Container(
                                         padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
@@ -45,11 +46,11 @@ class _ListPengaduanPage extends State<InfoWisataPage> {
                                     ),
                                 )
                             )
-                        )
+                        );
                     }
                 }
             }
         )
-    )
+    );
   }
 }

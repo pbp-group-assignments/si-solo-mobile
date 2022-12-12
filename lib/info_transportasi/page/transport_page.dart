@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:si_solo/info_transportasi/model/transportation.dart';
-import 'package:si_solo/info_transportasi/model/route.dart';
+import 'package:si_solo/info_transportasi/model/route.dart' as routemodel;
 import 'package:si_solo/info_transportasi/model/stop_point.dart';
 import 'package:si_solo/info_transportasi/util/drawer_transport_regular.dart';
 import 'package:si_solo/info_transportasi/util/fetch_transportation.dart';
@@ -25,6 +25,8 @@ class TransportPageState extends State<TransportPage> {
       Color borderColor = const Color.fromARGB(255, 200, 75, 204);
       String image = '';
       Transportation transportation = data[index][0] as Transportation;
+      List<Object> routes = data[index][1] as List<Object>;
+      List<Widget> routeWidgets = buildRoutes(routes);
 
       if (transportation.fields.name.contains("Bus Batik")) {
         image = 'bus_bst.jpg';
@@ -39,30 +41,102 @@ class TransportPageState extends State<TransportPage> {
       }
 
       return Card(
-        elevation: 0,
+        elevation: 3,
         margin: const EdgeInsets.all(5),
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: borderColor,
-          ),
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
+        shape: Border.all(
+          color: borderColor
         ),
         child: Column(
           children: [
             Image.asset('assets/images/$image'),
-            Text(
-              transportation.fields.name,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              )
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Text(
+                    transportation.fields.name,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    transportation.fields.description,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    "Rute:",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Container(
+                    child: Column(children: routeWidgets),
+                  ),
+                ],
+              ),
             ),
-            const Text('Deskripsi:'),
-            Text(transportation.fields.description)
           ],
         ),
       );
     });
+  }
+
+  List<Widget> buildRoutes(List<Object> data) {
+    Color borderColor = Colors.lightBlueAccent;
+    List<Widget> listWidgets = [];
+
+    for (int j = 0; j < data.length; j++) {
+      List<Object> list = data[j] as List<Object>;
+      routemodel.Route route = list[0] as routemodel.Route;
+      List<StopPoint> stopPoints = list[1] as List<StopPoint>;
+      String strStops = "";
+
+      for (int i = 0; i < stopPoints.length; i++) {
+        strStops += "${stopPoints[i].fields.stopName} - ";
+        if (i == stopPoints.length - 1) {
+          strStops = strStops.substring(0, strStops.length - 3);
+        }
+      }
+
+      listWidgets.add(
+        Card(
+          margin: const EdgeInsets.all(5),
+          shape: Border.all(
+            color: borderColor
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Column(
+              children: [
+                Text(
+                  route.fields.fromTo,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Divider(
+                  height: 10,
+                  thickness: 1,
+                  indent: 5,
+                  endIndent: 5,
+                  color: Colors.grey,
+                ),
+                Text(strStops),
+              ]
+            ),
+          )
+        )
+      );
+    }
+
+    return listWidgets;
   }
   
   @override
@@ -75,7 +149,7 @@ class TransportPageState extends State<TransportPage> {
   Widget build(BuildContext context) {
     Widget drawer = const DrawerTransportRegular();
 
-    if (UserLogin.listUserLogin[0].role == 'Admin') {
+    if (UserLogin.listUserLogin.isNotEmpty && UserLogin.listUserLogin[0].role == 'Admin') {
       drawer = const DrawerTransportAdmin();
     }
 

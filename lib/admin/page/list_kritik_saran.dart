@@ -10,7 +10,7 @@ class ListKritikSaranPage extends StatefulWidget {
   State<ListKritikSaranPage> createState() => _ListKritikSaranPage();
 }
 
-class _ListKritikSaranPage extends State<InfoWisataPage> {
+class _ListKritikSaranPage extends State<ListKritikSaranPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +35,7 @@ class _ListKritikSaranPage extends State<InfoWisataPage> {
                         return ListView.builder(
                             itemCount: snapshot.data!.length,
                             itemBuilder: (_, index) => Container(
+                              child:
                                 Card(
                                     child: Container(
                                         padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 7),
@@ -45,11 +46,11 @@ class _ListKritikSaranPage extends State<InfoWisataPage> {
                                     ),
                                 )
                             )
-                        )
+                        );
                     }
                 }
             }
         )
-    )
+    );
   }
 }

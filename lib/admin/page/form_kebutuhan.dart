@@ -63,12 +63,12 @@ class _MyFormPage extends State<MyFormPage> {
                         ),
                         onChanged: (String? value) {
                           setState(() {
-                            _judul = value!;
+                            _namaKebutuhan = value!;
                           });
                         },
                         onSaved: (String? value) {
                           setState(() {
-                            _judul = value!;
+                            _namaKebutuhan = value!;
                           });
                         },
                         validator: (String? value) {
@@ -89,17 +89,17 @@ class _MyFormPage extends State<MyFormPage> {
                           ),
                         ),
                         keyboardType: TextInputType.number,
-                        inputFormatters: <TextInputFormatter>[
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
+                        // inputFormatters: <TextInputFormatter>[
+                        //   FilteringTextInputFormatter.digitsOnly
+                        // ],
                         onChanged: (String? value) {
                           setState(() {
-                            _nominal = int.parse(value!);
+                            _hargaKebutuhan = value!;
                           });
                         },
                         onSaved: (String? value) {
                           setState(() {
-                            _nominal = int.parse(value!);
+                            _hargaKebutuhan = value!;
                           });
                         },
                         validator: (String? value) {
@@ -120,17 +120,17 @@ class _MyFormPage extends State<MyFormPage> {
                           ),
                         ),
                         keyboardType: TextInputType.number,
-                        inputFormatters: <TextInputFormatter>[
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
+                        // inputFormatters: <TextInputFormatter>[
+                        //   FilteringTextInputFormatter.digitsOnly
+                        // ],
                         onChanged: (String? value) {
                           setState(() {
-                            _nominal = int.parse(value!);
+                            _deskripsiKebutuhan = value!;
                           });
                         },
                         onSaved: (String? value) {
                           setState(() {
-                            _nominal = int.parse(value!);
+                            _deskripsiKebutuhan = value!;
                           });
                         },
                         validator: (String? value) {
