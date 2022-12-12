@@ -6,6 +6,8 @@ import 'package:si_solo/saran_pembangunan_kota/page/form_kritik_saran.dart';
 import 'info_kuliner/page/list_kuliner_pengguna.dart';
 import 'info_wisata/page/list_wisata_pengguna.dart';
 import 'package:si_solo/info_kebutuhan/page/list_kebutuhan_pengguna.dart';
+import 'package:si_solo/info_transportasi/page/transport_page.dart';
+import 'package:si_solo/info_sarana_kesehatan/page/healthcenter_page.dart';
 
 Drawer buildDrawer(BuildContext context) {
   return Drawer(
@@ -71,6 +73,24 @@ Drawer buildDrawer(BuildContext context) {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const InfoKulinerPenggunaPage())
+              );
+            }
+        ),
+        ListTile(
+            title: const Text('Info Transportasi Umum'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TransportPage())
+              );
+            }
+        ),
+        ListTile(
+            title: const Text('Info Sarana Kesehatan'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HealthCenterPage())
               );
             }
         ),
