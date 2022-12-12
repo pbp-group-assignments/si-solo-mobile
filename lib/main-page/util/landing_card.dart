@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/components/avatar/gf_avatar.dart';
 import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/daftar_pelaku_usaha.dart';
-
 import '../../landing_page_pengguna.dart';
+import 'package:si_solo/info_transportasi/page/transport_page.dart';
+import 'package:si_solo/info_sarana_kesehatan/page/healthcenter_page.dart';
 
 class MyCardItem extends StatelessWidget {
   @override
@@ -128,7 +129,7 @@ class MyCardItem extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const LandingPenggunaPage()));
+                                    const HealthCenterPage()));
                       },
                     ),
                     Padding(
@@ -173,7 +174,7 @@ class MyCardItem extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const LandingPenggunaPage()));
+                                    const TransportPage()));
                       },
                     ),
                     Padding(

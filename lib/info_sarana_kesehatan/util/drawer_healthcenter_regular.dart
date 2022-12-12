@@ -19,16 +19,22 @@ class DrawerHealthCenterRegular extends StatelessWidget {
             title: const Text('Home'),
             onTap: () {
               // Route menu ke halaman utama
-              if (UserLogin.listUserLogin[0].role == 'Pengguna') {
+              if (UserLogin.listUserLogin.isNotEmpty && UserLogin.listUserLogin[0].role == 'Pengguna') {
                 Navigator.pushReplacement(
                   context, 
                   MaterialPageRoute(builder: (context) => const LandingPenggunaPage())
                 );
               }
-              else {
+              else if (UserLogin.listUserLogin.isNotEmpty && UserLogin.listUserLogin[0].role == 'Pelaku Usaha') {
                 Navigator.pushReplacement(
                   context, 
                   MaterialPageRoute(builder: (context) => const LandingPelakuUsahaPage())
+                );
+              }
+              else {
+                Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const MyHomePage())
                 );
               }
             },
