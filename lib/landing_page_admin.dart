@@ -8,6 +8,7 @@ import 'package:getwidget/components/avatar/gf_avatar.dart';
 import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 import 'package:si_solo/main-page/model/user.dart';
 import 'package:si_solo/main.dart';
+import 'package:si_solo/info_kebutuhan/page/list_kebutuhan_pengguna.dart';
 
 class LandingAdminPage extends StatefulWidget {
   const LandingAdminPage({super.key});
@@ -279,6 +280,8 @@ class _LandingAdminPage extends State<LandingAdminPage> {
                       ),
                     ),
                   ),
+    
+                  const SizedBox(height: 10,),
 
                   Card(
                     shape: RoundedRectangleBorder(

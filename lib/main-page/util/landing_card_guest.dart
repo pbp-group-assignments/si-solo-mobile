@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/components/avatar/gf_avatar.dart';
 import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 import 'package:si_solo/pendaftaran_izin_usaha/page/daftar_pelaku_usaha.dart';
+import 'package:si_solo/info_transportasi/page/transport_page.dart';
+import 'package:si_solo/info_sarana_kesehatan/page/healthcenter_page.dart';
 
 import '../../landing_page_pengguna.dart';
 
@@ -34,7 +36,7 @@ class MyGuestCardItem extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const LandingPenggunaPage()));
+                                    const HealthCenterPage()));
                       },
                     ),
                     Padding(
@@ -79,7 +81,7 @@ class MyGuestCardItem extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const LandingPenggunaPage()));
+                                    const TransportPage()));
                       },
                     ),
                     Padding(
