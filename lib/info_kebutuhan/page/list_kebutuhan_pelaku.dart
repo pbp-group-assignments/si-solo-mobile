@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:si_solo/drawer_pelaku.dart';
+import 'package:si_solo/drawer_pelaku_usaha.dart';
 import 'package:si_solo/info_kebutuhan/page/detail_kebutuhan_pelaku.dart';
 import 'package:si_solo/drawer_pelaku_usaha.dart';
-import 'package:si_solo/info_kebutuhan/utils/fetch_pelaku.dart';
+import 'package:si_solo/info_kebutuhan/utils/fetch_kebutuhan_pelaku.dart';
 
 class InfoKebutuhanPelakuPage extends StatefulWidget {
   const InfoKebutuhanPelakuPage({super.key});
